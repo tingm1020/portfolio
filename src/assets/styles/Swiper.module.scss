@@ -1,0 +1,518 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './_base.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+
+/*=============================================
+=                    base                     =
+=============================================*/
+
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+    &_center{
+        @extend .comFix;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+/*=============================================
+=                Swiper module                =
+=============================================*/
+.imageBase {
+    transform: scale(1.02);
+}
+
+@keyframes scaleUp{
+    0%{
+        transform: scale(1.02);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+.imageHover {
+    animation: scaleUp 1s ease forwards;
+}
+@keyframes scaleOut {
+    0%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1.02);
+    }
+}
+.imageOut{
+    animation: scaleOut 1s ease forwards;
+}
+.Swiper{
+    &_container{
+        overflow: hidden;
+    }
+    &_single{
+        position: relative;
+        display: block;
+        padding: 2rem 0;
+        box-sizing: border-box;
+        border-radius: 50px;
+        background: #000;
+        overflow: hidden;
+        .swiper-pagination{
+            width: auto;
+            right: 40px;
+            bottom: 0;
+        }
+        .swiper-customVariant1-pagination{
+            width: auto;
+            right: 40px;
+            bottom: 0;
+        }
+        .swiper-pagination-bullet-active{
+            background: #fff;
+        }
+        &_perbox{
+            padding: 0 0 3rem 0rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            box-sizing: border-box;
+            margin: 0 auto 10rem;
+            background: #141414;
+            
+            &_hover{
+                opacity: 0;
+                transition: all .6s;  
+                &_box{
+                    @include abs($w:85%,$h:auto,$b:5%,$l:50%);
+                    transition: all .6s;
+                    padding: 1rem 1rem 1rem 1.2rem;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    transform: translate(-50%,0%) translate3d(0,0px,0);
+                }
+                &_bg{
+                    @include abs($w:100%,$h:100%,$t:50%,$l:50%);
+                    transform: translate(-50%,-50%);
+                    border-radius: 20px;
+                    background-color: rgba(34,34,34, .8);
+                }
+                
+                &Active{
+                    .Swiper_single_perbox_hover{
+                        opacity: 1;
+                        transition: all .6s;   
+                    }
+                    .Swiper_single_perbox_hover_box{
+                        transition: all .6s;
+                        transition-delay: 1s;
+                        animation: showUp .6s ease-in-out;
+                        
+                    }
+                    .Swiper_img_center img{
+                        transform: scale(1.05);
+                    }
+                    @keyframes showUp {
+                        from{
+                            opacity: 0;
+                            transform: translate(-50%,0%) translate3d(0,500px,0);
+                        }
+                        to{
+                            opacity: 1;  
+                            transform: translate(-50%,0%) translate3d(0,0px,0);
+                        }
+                    }
+                 
+                    @keyframes sacleUp {
+                        0%{
+                            transform: scale(1.02);
+                        }
+                        100%{
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &_spcBox{
+        &_40{
+            margin: 20px 4.5% 0 3%;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            vertical-align: middle;
+        }
+        &_50{
+            vertical-align: middle;
+            padding: 3rem;
+            box-sizing: border-box;
+            border-radius: 30px;
+            border: 1px solid #4e4e4e;
+            background: rgba(34,34,34,1);
+            margin: 35px auto 20px;
+            top: 50%;
+            transform: translate(0,0%);
+        }
+        &_top{
+            position: relative;
+            display: block;
+            .Txt{
+                &_h3{
+                     color: #fff;
+                }
+                &_h3,&_dec{
+                    font-family: 'Noto Sans TC';
+                    line-height: 1.5;
+                    font-weight: 300;
+                }
+                &_dec{
+                    color: $allColor4;
+                }
+            }
+        }
+        &_bottom{
+            position: relative;
+            display: block;
+            .Txt{
+                &_h4,&_h5{
+                    color: $allColor4;
+                    font-family: 'Noto Sans TC';
+                    line-height: 1.5;
+                    font-weight: 300;
+                }
+                &_h5{
+                    min-height: 100px;
+                    font-size: 1.1vw;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+   
+    &_block{
+        @extend .comRel;
+        background: #000;
+        &_noBg{
+            background: transparent;
+        }
+    }
+    &_title{
+        color: #fff;
+        font-size: 1.05vw;
+        line-height: 1.5;
+        letter-spacing: .05vw;
+		margin: .5rem auto;
+        font-family: "Noto Sans TC";
+        &_box{
+            @extend .comRel;
+            max-width: 85%;
+            margin: 0;
+        }
+        &_dec{
+            color: $allColor4;
+            font-size: 1vw;
+            line-height: 1.4;
+            font-weight: 200;
+            font-family: "Noto Sans TC";
+        }
+    }
+    &_txtBox{
+        &_tag{
+            position: relative;
+            display: inline-block;
+            font-size: 1vw;
+            line-height: 1.2;
+            color: $allColor4;
+        }
+        &_tools{
+            position: relative;
+            display: block;
+            margin: .3rem 0rem .5rem -.2rem;
+            text-align: left;
+            min-height: 50px;
+        }
+        &_tool{
+            position: relative;
+            display: inline-block;
+            font-size: .9vw;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #fff;
+            background: $allColor1;
+            border-radius: 10px;
+            margin: .2rem .1rem;
+            padding: .1rem .5rem .2rem;
+            box-sizing: border-box;
+        }
+        &_time{
+            position: relative;
+            display: block;
+            color: #fff;
+            font-size: 1vw;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+    }
+    &_icon{
+        &_style1{
+            @include wh(50px,50px);
+            padding: .2rem;
+            box-sizing: border-box;
+            border-radius: 12px;
+            border: 1px solid #4e4e4e;
+            background: rgba(34,34,34,1);
+            aspect-ratio: 16 / 9;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &_img{
+        &_center{
+            position: relative;
+            display: inline-block;
+            @include wh(100%,auto);
+            // aspect-ratio: 16 / 9;
+            left: 50%;
+            margin: 3rem auto;
+            transform: translate(-50%,0%);
+            
+            &_noBottom{
+                margin: 3rem auto 0;
+                overflow: hidden;
+                border-radius: 30px;
+                transition: all 1s;
+                // aspect-ratio: 9 / 13;
+            }
+            img{
+                transform: scale(1.02);
+                transition: transform 0.6s ease;
+            }
+        }
+    }
+}
+.spcBlock{
+    &_40{
+        vertical-align: bottom;
+    }
+    &_60{
+        vertical-align: bottom;
+    }
+}
+.Txt_origin{
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC';
+}
+.Txt{
+    &_num{
+        @extend .Txt_origin;
+        font-size: 2vw;
+        color: #fff;
+        font-weight: 800;
+    }
+    &_dec{
+        min-height: 150px;
+    }
+}
+.custom{
+    &_pagination{
+        background: #fff;
+    }
+}
+
+/*=============================================
+=                     RWD                     =
+=============================================*/
+@include rwd(max,1200){
+    .Txt{
+        &_dec{
+            min-height: 220px;
+        }
+        &_num{
+            font-size: 48px;
+        }
+        &_h5{
+            font-size: 16px;
+        }
+    }
+    .Swiper{
+        &_spcBox{
+            &_40{
+                margin: 20px 0;
+                padding: 1rem 5rem;
+            }
+            &_50{
+                padding: 2rem;
+                left: 50%;
+                width: 80%;
+                transform: translate(-50%,0);
+            }
+            &_bottom{
+                .Txt{
+                    &_h5{
+                        margin: 1rem auto;
+                        min-height: 100px;
+                    }
+                }
+            }
+        }
+        &_title{
+            margin: .3rem auto .5rem;
+            font-size: 14px;
+            &_dec{
+                font-size: 12px;
+            }
+        }
+        &_txtBox{
+            &_tag{
+                font-size: 1.3vw;
+            }
+            &_tool{
+                font-size: 1.2vw;
+                padding: .2rem .5rem .3rem;
+            }
+            &_time{
+                font-size: 1.3vw;
+            }
+        }
+    }
+}
+@include rwd(max,1024){
+    .Swiper{
+        &_spcBox{
+            &_bottom{
+                .Txt{
+                    &_h5{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        &_title{
+            font-size: 14px;
+            &_dec{
+                font-size: 12px;
+            }
+        }
+    }
+    .Txt{
+        &_num{
+            font-size: 28px;
+        }
+    }
+}
+
+@include rwd(max,750){
+    .Txt{
+        &_dec{
+            min-height: 150px;
+        }
+        &_h3{
+            font-size: 24px;
+        }
+        &_h5{
+            font-size: 14px;
+        }
+        &_num{
+            font-size: 24px;
+        }
+    }
+    .Swiper{
+        &_single{
+            border-radius: 30px;
+            &_perbox{
+                margin: 0 auto 5rem;
+                &_hover{
+                    &_box{
+                        width: 90%;
+                        padding: .5rem 1rem;
+                    }
+                }
+                
+            }
+        }
+        
+        &_img{
+            &_center{
+                margin: 1.5rem auto .5rem;
+            }
+        }
+        &_spcBox{
+            &_40{
+                padding: 1rem;
+                margin: 20px auto;
+            }
+            &_50{
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background: none;
+            }
+            &_bottom{
+                .Txt{
+                    &_h5{
+                        font-size: 16px;
+                        min-height: 120px;
+                    }
+                }
+                
+            }
+        }
+        &_txtBox{
+            &_tag{
+                font-size: 14px;
+            }
+            &_tool{
+                font-size: 12px;
+            }
+            &_time{
+                font-size: 14px;
+            }
+        }
+        &_title{
+            font-size: 16px;
+            line-height: 1.5;
+            &_box{
+                max-width: 100%;
+            }
+            &_dec{
+                font-size: 14px;
+            }
+        }
+    }
+}
+@include rwd(max,414){
+    .Swiper{
+        &_title{
+            font-size: 14px;
+        }
+        &_dec{
+            font-size: 12px;
+        }
+    }
+}

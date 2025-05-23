@@ -1,0 +1,240 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './common.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+
+/*=============================================
+=                    base                     =
+=============================================*/
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+}
+/*=============================================
+=                  Page module                =
+=============================================*/
+
+.Page{
+    &_sticky{
+        @extend .comRel;
+        overflow: hidden;
+        &_wrapper{
+            display: flex;
+            justify-content: center;
+            @include wh(100%,100%);
+            padding: 20px 0; 
+            height: 100vh;
+        }
+        &_content{
+            position: relative;
+            width: 100%;
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        &_section{
+            position: sticky;
+            top: 0px;
+            padding: 0px;
+            display: flex;
+            color: $allColor7;
+            margin: 0 auto;
+            overflow: auto;
+            height: 100vh;
+            max-width: 90%;
+            transition: all .6s;
+            &:first-child{
+                z-index: 2;
+                justify-content: start;
+            }
+            &:nth-child(2){
+                z-index: 3;
+                min-height: 80%;
+            }
+            &:last-child{
+                z-index: 4;
+                min-height: 80%;
+                justify-content: flex-end;
+                
+            }
+        }
+        
+        // &_section{
+        //     align-items: center;
+        //     display: flex;
+        //     flex: none;
+        //     flex-direction: column;
+        //     flex-wrap: nowrap;
+        //     gap: 10px;
+        //     height: min-content;
+        //     justify-content: start;
+        //     min-height: 100vh;
+        //     overflow: hidden;
+        //     padding: 128px 120px 256px;
+        //     position: sticky;
+        //     top: 1px;
+        //     width: 100%;
+        //     will-change: transform;
+        //     z-index: 3;
+        //     &:nth-child(2){
+        //         z-index: 4;
+        //         gap: 56px;
+        //     }
+        //     &:nth-child(3){
+        //         gap: 78px;
+        //         z-index: 5;
+        //     }
+        // }
+
+
+        &_wrap{
+            position: relative;
+            display: inline-block;
+            float: left;
+            vertical-align: middle;
+            overflow: hidden;
+            &Box{
+                @extend .Page_sticky_wrap;
+                width: 100%;  
+            }
+            &_50{
+                @extend .Page_sticky_wrap;
+                @include wh(calc(50% - 2px),600px);
+                border: 1px solid #000;
+                img{
+                    position: relative;
+                    display: inline-block;
+                    width: 100%;
+                    top: 50%;
+                    transform: translate(0,-50%);
+                    animation: fadeIn 3s ease-in-out;
+                }
+            }
+            &_style1{
+                &_left{
+                    background: #fff;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                }
+                &_right{
+                    background: #fff;
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                }
+            }
+            &_style2{
+                &_left{
+                    background: #000;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                }
+                &_right{
+                    background: #000;
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                    
+                }
+            }
+        }
+        &_txt{
+            &_h3{
+                font-weight: 800;
+            }
+        }
+    }
+}
+.Txt{
+    position: relative;
+    display: inline-block;
+    &_box{
+        @extend .Txt;
+        padding: 7rem 8rem 7rem 7rem;
+        box-sizing: border-box;
+        vertical-align: bottom;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+}
+.fadeIn{
+    animation: fadeIn 3s forwards;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/*=============================================
+=                 Radio module                =
+=============================================*/
+.Radio{
+    &_style1{
+        &_label{
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+            font-weight: 600;
+            width: 28%;
+            vertical-align: middle;
+            margin: 2rem auto;
+            input{
+                @include abs($l:-9999px);
+                &:checked + span{
+                    &:before{
+                        content: '';
+                        box-shadow: inset 0 0 0 0.3em #fff;
+                        background-color: #000;
+                    }
+                }
+            }
+            span{
+                display: flex;
+                align-items: center;
+                padding: 0.375rm 0.75em 0.375em 0.375em;
+                border-radius: 99em;
+                transition: .6s ease;
+                font-size: 14px;
+                color: #000;
+                &:before{
+                    content: "";
+                    display: flex;
+                    flex-shrink: 0;
+                    background-color: #fff;
+                    @include wh(20px,20px);
+                    border-radius: 50%;
+                    margin-right: .5rem;
+                    transition: .6s ease;
+                    border: 1px solid $allColor1;
+                }
+            }
+        }
+        
+        
+    }
+}

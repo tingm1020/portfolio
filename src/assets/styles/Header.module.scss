@@ -1,0 +1,241 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './_base.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+
+/*=============================================
+=                    base                     =
+=============================================*/
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+}
+/*=============================================
+=                Header module                =
+=============================================*/
+.Header{
+    @extend .comFix;
+    z-index: 9;
+    &_singleEquallyLine{
+        @extend .Header;
+        
+        box-sizing: border-box;
+    }
+    &_style1{
+        left: 50%;
+        transform: translate(-50%,0);
+		&_block{ 
+			max-width: 1100px;
+			padding: 20px;
+			box-sizing: border-box;
+			margin: 30px auto 0;
+        	background: #000;
+			border-radius: 50px;
+		}
+    }
+}
+.menu{
+	position: relative;
+	display: inline-block;
+    vertical-align: middle;
+	&_PC{
+		display: block;
+	}
+	&_MB{
+		&_posCenter{
+			width: 100%;
+			left: 50%;
+			top: 0%;
+			transform: translate(-50%,0%);
+		}
+		&_style1{
+			@include wh(90%,50vh);
+			margin: 30px auto;
+			background: #000;
+			border-radius: 50px;
+			padding: 15% 5%;
+			box-sizing: border-box;
+		}
+	}
+	&_posLeft{
+		composes: menu;
+		width: 25%;
+		float: left;
+		text-align: left;
+	}
+	&_posCenter{
+		composes: menu;
+		text-align: center;
+		width: 50%;
+	}
+	&_posRight{
+		composes: menu;
+		width: 25%;
+		float: right;
+		text-align: right;
+	}
+	&_logo{
+		position: relative;
+		display: inline-block;
+        vertical-align: middle;
+		&_img{
+            @extend .menu_logo;
+			width: 8%;
+			margin: 10px 0 3px 10px;
+			img{
+				@include wh(100%,auto);
+			}
+		}
+		&_name{
+            @extend .menu_logo;
+			color: #fff;
+			font-size: 22px;
+			font-weight: bold;
+			line-height: 1.2;
+            margin: 0 2.5%;
+			padding: 8px 0;
+			box-sizing: border-box;
+            text-align: center;
+		}
+	}
+	&_block{
+		position: relative;
+		display: inline-block;
+		width: 100%;
+	}
+	&_menuBtn{
+		position: relative;
+		display: inline-block;
+		width: auto;
+		margin: 0 2%;
+		font-size: 14px;
+		padding: 12px 5px;
+		font-weight: bold;
+		box-sizing: border-box;
+		line-height: 1.2;
+		color: #fff;
+		letter-spacing: 1px;
+		transition: all .6s;
+		
+		&Single{
+			@extend .menu_menuBtn;
+			padding: 12px 18px;
+			background: $allColor3;
+			margin: 0;
+			font-size: 14px;
+			color: #000;
+			border-radius: 20px;
+			&:hover{
+				color: #fff;
+				background: $allColor1;
+				transition: all .6s;
+			}
+		}
+	}
+}
+/*=============================================
+=                     RWD                     =
+=============================================*/
+@include rwd(max, 1200){
+	.Header{
+		&_style1{
+			&_block{
+				max-width: 90%;
+			}
+		}
+		
+	}
+	.menu{
+		&_logo{
+			&_img{
+				display: none;
+			}
+			&_name{
+				padding: 4px 0;
+			}
+		}
+		&_menuBtn{
+			margin: 0 auto;
+			font-size: 14px;
+			padding: 10px;
+			
+		}
+		&_pos{
+			&Left{
+				width: 15%;
+			}
+			&Center{
+				width: 70%;
+			}
+			&Right{
+				width: 15%;
+			}
+			&Bottom{
+
+			}
+		}
+	}
+}
+@include rwd(max,750){
+	.menu{
+		&_PC{
+			display: none;
+		}
+		&_MB{
+			display: block;
+			&_style1{
+				height: auto;
+			}
+		}
+		&_posLeft{
+			width: 60%;
+		}
+		&_posCenter{
+			width: 90%;
+		}
+		&_menuBtn{
+			width: 100%;
+			display: block;
+			padding: 2rem 0;
+			border-bottom: 1px solid #fff;
+			text-align: left;
+			font-size: 18px;
+			&:after{
+				content: '';
+				@include abs($w:25px,$h:25px,$t:50%,$r:0);
+				transform: translate(-50%,-50%) rotate(180deg) scale(.6);
+				transform-origin: center center;
+				background: url(../../../public/images/arrow_top.svg) 50% 50% no-repeat;
+				background-size: 100% auto;
+				opacity: .5;
+				transition: all .6s;
+			}
+			&Single{
+				@include abs($w:auto,$r:calc(0% + 2px),$b:-1.6rem);
+				padding: .8rem 4rem .8rem 2rem;
+				border-radius: 40px;
+				border: 2px solid #fff;
+			}
+		}
+	}
+}

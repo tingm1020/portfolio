@@ -1,0 +1,137 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './_base.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+
+/*=============================================
+=                    base                     =
+=============================================*/
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+}
+/*=============================================
+=                Load module                =
+=============================================*/
+.Load{
+    &_container{
+        @include fix($w:100%,$h:100%,$t:50%,$l:50%);
+        transform: translate(-50%,-50%);
+        background: rgba(0,0,0, .6);
+        opacity: 1;
+        visibility: visible;
+        z-index: 99;
+        transition: all .6s;
+        animation: fadeOut 2s forwards;
+    }
+    &_block{
+        @include abs($t:50%,$l:50%);
+        transform: translate(-50%,-50%) scale(.9);
+    }
+    &_singlebox{
+        &_style1{
+            position: relative;
+            @include wh(120px,120px);
+            z-index: 2;
+            &_ball{
+                @include abs($w:40px,$h:20px);
+                background: #fff;
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                z-index: 2;
+                &:after{
+                    content: '';
+                    @include abs($w:60px,$h:20px,$t:100%,$l:50%);
+                    transform: translateX(-50%);
+                    border-radius: 50%;
+                    filter: blur(12px);
+                    opacity: .7;
+                    z-index: -1;
+                }
+                &:nth-child(1){
+                    top: 35px;
+                    left: 50%;
+                    background: $allColor2;
+                    transform: translateX(-50%);
+                    animation: bounce 2s ease-in-out infinite;
+                }
+                &:nth-child(2){
+                    top: 50%;
+                    left: 60px;
+                    background: $allColor3;
+                    transform: translateY(-50%);
+                }
+                &:nth-child(3){
+                    top: 60px;
+                    left: 50%;
+                    background: $allColor4;
+                    transform: translateX(-50%);
+                }
+                &:nth-child(4){
+                    top: 50%;
+                    left: 20px;
+                    background: $allColor5;
+                    transform: translateY(-50%);
+                }
+            }
+            &_txt{
+                @include abs($w:180px,$h:180px,$t:-25%,$l:-25%);
+                transform: translate(50%,50%);
+                animation: rotateText 8s ease-in-out infinite;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@keyframes fadeOut {
+    to{
+        opacity: 0;
+        visibility: hidden;
+        // opacity: 1;
+        // visibility: visible;
+    }
+}
+
+@keyframes rotateText {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%,100%{
+        top: 30px;
+    }
+    25%{
+        top: 40px;
+    }
+    50%{
+        top: 25px;
+    }
+    75%{
+        top: 35px;
+    }
+}

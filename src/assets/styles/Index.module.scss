@@ -1,0 +1,193 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './_base.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+/*=============================================
+=                    base                     =
+=============================================*/
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+    &_center{
+        @extend .comFix;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+/*=============================================
+=                   index                     =
+=============================================*/
+.wrapper{
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    display: block;
+    min-height: 750px;
+    background: $pageColor1;
+    transition: all .6s;
+}
+.Kv{
+    &_spc{
+        top: calc(50% + 40px);
+    }
+}
+.Page{
+    &_container{
+        &_black{
+            background: #000;
+        }
+        &_box{
+            @extend .comRel;
+            border-radius: 30px;
+        }
+    }
+    &_dec{
+        &_mb{
+            &_black{
+                min-height: 300px;
+                background: #000;
+                display: none;
+            }
+        }
+    }
+}
+.Txt{
+    &_box{
+        &_top{
+            position: relative;
+            display: none;
+            text-align: left;
+            width: 75%;
+            margin: 6rem auto 3rem;
+        }
+        &_left{
+            position: relative;
+            display: inline-block;
+            text-align: left;
+            width: 75%;
+            margin: 6rem auto 3rem;
+        }
+        &_h2{
+            color: #fff;
+            font-size: 3vw;
+            font-weight: 300;
+            line-height: 1.4;
+            font-family: "Noto Sans TC";
+        }
+        &_h5{
+            position: relative;
+            color: $allColor7;
+            font-weight: 200;
+            line-height: 1.4;
+            font-size: 1vw;
+            margin-left: 20px;
+            p{
+                position: relative;
+                display: inline-block;
+            }
+            &:before{
+                content: '';
+                @include abs($w:10px,$h:1px,$t:50%,$l:-15px);
+                display: inline-block;
+                transform: translate(0,-50%);
+                background: $allColor7;
+            }
+        }
+        &_tag{
+            position: relative;
+            display: block;
+            font-size: 1vw;
+            line-height: 1.2;
+            font-weight: 800;
+            &:before{
+                content: '';
+                position: relative;
+                display: inline-block;
+                @include wh(8px,8px);
+                background: $allColor2;
+                border-radius: 100%;
+                vertical-align: middle;
+                line-height: 1;
+                margin: 0 5px 3px 0;
+            }
+        }
+    }
+}
+
+/*=============================================
+=                     RWD                     =
+=============================================*/
+@include rwd(max,1024){
+    .Txt{
+        &_box{
+            &_left{
+                width: 100%;
+                margin: 1rem auto 3rem;
+            }
+            &_h3{
+                font-size: 36px;
+                color: #fff;
+                font-weight: 300;
+                line-height: 1.4;
+                font-family: "Noto Sans TC";
+            }
+             &_h5{
+                font-size: 16px;
+            }
+        }
+    }
+}
+@include rwd(max,750){
+    .Page{
+        &_dec{
+            &_mb{
+                &_black{
+                    display: block;
+                }
+            }
+        }
+    }
+    .Txt{
+        &_box{
+            &_top{
+                display: block;
+                width: 100%;
+            }
+            &_h2{
+                font-size: 36px;
+            }
+            &_h5{
+                font-size: 16px;
+            }
+            &_dec{
+                font-size: 16px;
+                font-weight: 200;
+                line-height: 1.5;
+                color: #fff;
+            }
+            
+        }
+    }
+}

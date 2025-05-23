@@ -1,0 +1,892 @@
+@charset "utf-8";
+@import "_reset.scss";
+@import "_base.scss";
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu); 
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Merriweather|Rock+Salt|Comfortaa);
+@import url(https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap);
+
+/*=============================================
+=                   plugin                    =
+=============================================*/
+// include swiper css in base.css
+@include swiper();
+
+/*=============================================
+=                  All setting               =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+/*=============================================
+=                    base                     =
+=============================================*/
+
+// body{
+// 	@include abs($t:0,$b:0,$r:0,$l:0);
+// 	min-height: 100%;
+// 	font:normal 12px/18px 'Zen Maru Gothic','Droid Sans',Arial,'Noto Sans TC','Microsoft JhengHei','微軟正黑體';
+// 	color: $allColor1;
+// 	background: $allColor1;
+// 	overflow: hidden;
+// }
+body{
+	// font:normal 12px/18px 'Zen Maru Gothic','Droid Sans',Arial,'Noto Sans TC','Microsoft JhengHei','微軟正黑體';
+	font:normal 12px/18px 'Noto Sans TC','Zen Maru Gothic','Droid Sans',Arial,'Microsoft JhengHei','微軟正黑體';
+	color: $allColor1;
+	background: $allColor1;
+}
+input,select,textarea{
+	font:normal 12px/18px 'Noto Sans TC','Zen Maru Gothic','Droid Sans',Arial,'Microsoft JhengHei','微軟正黑體';
+	padding:0;
+	margin:0;
+	vertical-align:middle;}
+a{
+	color: $allColor1;
+	text-decoration:none;
+}
+html{
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+body,html{    
+	height: 100%;
+	
+}
+button{
+	border: none;
+	background: transparent;
+	font:normal 12px/18px 'Droid Sans',Arial,'Noto Sans TC','Microsoft JhengHei','微軟正黑體';
+	cursor: pointer;
+}
+svg{
+	border: none;
+	background: transparent;
+}
+.clear{
+	clear: both;
+}
+::selection {
+    background: $allColor2;
+    color: #fff;
+}
+@mixin comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+@mixin comInline{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+
+@media screen and (min-width: 414px) {
+	/* Firefox */
+	* {
+	  scrollbar-width: auto;
+	  scrollbar-color: $allColor1;
+	}
+	/* Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+	  width: 16px;
+	}
+	*::-webkit-scrollbar-track {
+	  background: #f4f4f4;
+	}
+	*::-webkit-scrollbar-thumb {
+	  background-color: $allColor1;
+	  border-radius: 10px;
+	  border: 5px solid #f4f4f4;
+	}
+}
+  
+/*=============================================
+=                    base                     =
+=============================================*/
+.block{
+	@include comRel;
+	&_1100{
+		@extend .block;
+		max-width: 1100px;
+	}
+	&_1000{
+		@extend .block;
+		max-width: 1000px;
+	}
+	&_900{
+		@extend .block;
+		max-width: 900px;
+	}
+	&_100{
+		@extend .block;
+		max-width: 100%;
+	}
+	&_90{
+		@extend .block;
+		max-width: 90%;
+	}
+	&_80{
+		@extend .block;
+		max-width: 80%;
+	}
+}
+.spc{
+	position: relative;
+	display: inline-block;
+	&Block{
+		&_20{
+			@extend .spc;
+			width: 20%;
+		}
+		&_40{
+			@extend .spc;
+			width: 40%;
+		}
+		&_60{
+			@extend .spc;
+			width: 60%;
+		}
+		&_70{
+			width: 70%;
+		}
+		&_80{
+			@extend .spc;
+			width: 80%;
+		}
+	}
+	&Box{
+		position: relative;
+		display: inline-block;
+		&_40{
+			@extend .spcBox;
+			width: 40%;
+		}
+		&_50{
+			@extend .spcBox;
+			width: 50%;
+			img{
+				width: 100%;
+			}
+		}
+	}
+}
+.Txt{
+	position: relative;
+	display: inline-block;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	padding: 8px 0;
+	box-sizing: border-box;
+	color: $allColor1;
+	font-weight: 100;
+	&_box{
+		color: #fff;
+	}
+	&_h2{
+		@extend .Txt;
+		font-size: 6vw;
+		line-height: 1;
+		margin: 1rem auto;
+		font-weight: 600;
+		font-family: 'Zen Maru Gothic','Noto Sans TC';
+	}
+	&_h3{
+		@extend .Txt;
+		font-size: 3vw;
+		line-height: 1;
+		margin: .5rem auto;
+		p{
+			line-height: 1.2;
+		}
+	}
+	&_h4{
+		@extend .Txt;
+		font-size: 2vw;
+		line-height: 1;
+		margin: 1rem auto;
+	}
+	&_h5{
+		@extend .Txt;
+		display: block;
+		font-size: 1.2vw;
+		line-height: 1;
+		margin: 0;
+	}
+	&_dec{
+		@extend .Txt;
+		display: block;
+		margin: 0 auto;
+		font-size: 1.1vw;
+		line-height: 1.5;
+		letter-spacing: 1px;
+		font-weight: 300;
+	}
+	&_normal{
+		@extend .Txt;
+	}
+}
+.Border{
+	position: relative;
+	display: block;
+	margin: 1rem auto;
+	padding: 3rem 0;
+	box-sizing: border-box;
+	&:before{
+		content: '';
+		@include abs($w:100%,$h:1px,$t:50%,$l:0);
+		background: $allColor3;
+	}
+	&_center{
+		@extend .Border;
+		padding: 3rem 0 1rem;
+	}
+}
+.Btn{
+	position: relative;
+	display: inline-block;
+	background: $allColor3;
+	font-size: 1.3vw;
+	font-weight: bold;
+	color: #000;
+	line-height: 1;
+	margin: 2rem auto;
+	font-family: 'Zen Maru Gothic','Noto Sans TC';
+	transition: all .6s;
+	&:hover{
+		color: #fff;
+		background: $allColor1;
+		transition: all .6s;
+	}
+	&_single{
+		@extend .Btn;
+		padding: 15px 20px;
+		box-sizing: border-box;
+		border-radius: 30px;
+		min-width: 250px;
+		max-width: 250px;
+		height: 50px;
+		&_page{
+			@extend .Btn_single;
+			font-size: 1vw;
+			display: inline-block;
+			margin: 1rem auto;
+			&_non{
+				display: inline-block;
+			}
+			&_hover{
+				display: none;
+				overflow: hidden;
+				color: #fff;
+			}
+			&:hover{
+				.Btn_single_page_non{
+					display: none;
+				}
+				.Btn_single_page_hover{
+					display: inline-block;
+				}
+			}
+		}
+		&_small{
+			@extend .Btn;
+			font-size: 1vw;
+			margin: 0 auto;
+			padding: 5px 10px 8px;
+			box-sizing: border-box;
+			border-radius: 30px;
+			min-width: auto;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	
+}
+.icon{
+	position: relative;
+	display: inline-block;
+	&_left{
+		@extend .icon;
+		text-align: left;
+	}
+	&_done{
+		@extend .icon;
+		@include wh(15px,15px);
+		background: $allColor2;
+		border-radius: 100%;
+		margin: 5px 8px 5px 10px;
+		border: 1px solid #fff;
+		&:before{
+			content: '';
+			@include abs($w:2.5px,$h:5px,$t:45%,$l:50%);
+			transform: translate(-50%,-50%) rotate(40deg);
+			border-bottom: 2px solid #fff;
+			border-right: 2px solid #fff;
+		}
+	}
+}
+/*=============================================
+=                     kv                      =
+=============================================*/
+.Kv{
+	&_container{
+		@include comRel;
+		height: 100vh;
+	}
+	&_block{
+		@include comRel;
+		&_center{
+			&_1100{
+				@include abs($t:50%,$l:50%);
+				max-width: 1100px;
+				transform: translate(-50%,-50%);
+				text-align: center;
+			}
+		}
+	}
+}
+/*=============================================
+=                    menu                     =
+=============================================*/
+.menu{
+	&_MB{
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		@include wh(35px,40px);
+		z-index: 10;
+		float: right;
+		display: none;
+		&_Btn{
+			@include abs($t:50%,$l:50%);
+			transform: translate(-50%,-50%);
+			box-sizing: border-box;
+			z-index: 12;
+			display: none;
+			i{
+				position: relative;
+				display: block;
+				@include wh(23px,3px);
+				background: #fff;
+				border-radius: 10px;
+				transition: all .6s;
+				&:nth-child(1){
+					top: -5px;
+				}
+				&:nth-child(3){
+					top: 5px;
+				}
+			}
+		}
+		&.on{
+			.menu_MB_Btn{
+				i{
+					&:nth-child(1){
+						transform: rotate(45deg);
+						top: 4px;
+					}
+					&:nth-child(2){
+						opacity: 0;
+					}
+					&:nth-child(3){
+						transform: rotate(-45deg);
+						top: -2px;
+					}
+				}
+			}
+		}
+		&_menuBtn{
+			opacity: 0;
+			transform: translate3d(0px,30px,0);
+			transition: all .6s;
+		}
+		&_Wrap{
+			@include abs($w:100%,$h:100vh,$t:0%,$l:0%);
+			z-index: 9;
+			background: rgba(0,0,0, .8);
+			transform: translate(0%,0%) !important;
+			opacity: 0;
+			visibility: hidden;
+			transition: all .6s;
+			&.on{
+				.menu_MB_menuBtn{
+					opacity: 1;
+					transform: translate3d(0,0,0);
+					transition: all .6s;
+					&:nth-child(1){
+						transition-delay: .3s
+					}
+					&:nth-child(2){
+						transition-delay: .6s;
+						border-bottom: 2px solid #fff;
+					}
+					&:nth-child(3){
+						transition-delay: .9s;
+						border-bottom: 2px solid #fff;
+					}
+					&:nth-child(4){
+						transition-delay: 1.1s
+					}
+				}	
+			}
+		}
+		
+	}
+}
+.on{
+	// display: block;
+	&.menu{
+		&_MB{
+			display: block;
+			&_Btn{
+				i{
+					&:nth-child(1){
+						transform: rotate(45deg);
+						top: 4px;
+					}
+					&:nth-child(2){
+						opacity: 0;
+					}
+					&:nth-child(3){
+						transform: rotate(-45deg);
+						top: -2px;
+					}
+				}
+			}	
+			&_Wrap{
+				opacity: 1;
+				visibility: visible;
+				transition: all .6s;
+				// display: block;
+			}
+			
+		}
+	}
+}
+/*=============================================
+=                    page                     =
+=============================================*/
+.Page{
+	&_container{
+		@include comRel;
+		padding: 1rem 0 3rem;
+		min-height: 600px;
+	}
+}
+/*=============================================
+=                    list                     =
+=============================================*/
+.List{
+	position: relative;
+	display: inline-block;
+	&_done{
+		margin: 1rem auto;
+		li{
+			@extend .List;
+			// margin: 0 10px;
+			line-height: 1.8;
+			vertical-align: middle;
+			font-family: 'Zen Maru Gothic','Noto Sans TC';
+			&:first-child{
+				margin: 0 0px 0 -10px;
+			}
+			span,p{
+				@extend .List;
+				vertical-align: middle;
+			}
+			p{
+				font-size: 1.1vw;
+				letter-spacing: 1px;
+				font-weight: 300;
+				font-family: 'Noto Sans TC';
+			}
+		}
+	}
+	
+}
+/*=============================================
+=                    list                     =
+=============================================*/
+.Img{
+	&_fit{
+		&13_9{
+			aspect-ratio: 13 / 9;
+		}
+		&9_13{
+			aspect-ratio: 9 / 13;
+		}
+	}
+}
+/*=============================================
+=                   custom                    =
+=============================================*/
+// swiper cutsom
+.Swiper{
+	&_container{
+		.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-customVariant1-pagination{
+			position: relative;
+			display: block;
+			width: auto;
+			right: 40px;
+			bottom: 0;
+			left: auto;
+			text-align: right;
+		}
+		.swiper-custom-bullet{
+			background: #fff;
+			&-active{
+				opacity: 1;
+			}
+		}
+	}
+	&_single{
+		&_perbox{
+			.swiper-slide{
+				width: 25%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			&_btnCombin{
+				@include abs($w:100%,$h:100px,$b:-150px,$r:0);
+				transform: translate(0%,-50%);
+				&_80{
+					@include comInline;
+					@include wh(80%,50px);
+					background: #000;
+					border-top-right-radius: 30px;
+					transform: translate3d(0,-26px,0);
+					z-index: 3;
+				}
+				&_20{
+					@include comInline;
+					@include wh(20%,100px);
+					background: #141414;
+					border-bottom-right-radius: 40px;
+					border-bottom-left-radius: 40px;
+					padding: 1rem 3rem;
+					box-sizing: border-box;
+					text-align: center;
+				}
+				.swiper_button{
+					&_icon{
+						@include abs($w:100%,$h:100%,$t:50%,$l:50%);
+						transform: translate(-50%,-50%);
+						transition: all .3s;
+					}
+				}
+				.swiper_button_prev2,
+				.swiper_button_next2{
+					position: relative;
+					display: inline-block;
+					@include wh(3vw,3vw);
+					margin: 0 .5rem;
+					border-radius: 15px;
+					padding: 1rem;
+					box-sizing: border-box;
+					cursor: pointer;
+					transition: all .6s;
+					&.swiper-button-disabled{
+						opacity: .3;
+						transition: all .6s;
+					}
+				}
+				
+				.swiper_button_prev2{
+					background: linear-gradient(212deg, $allColor1 0%, $allColor1);
+					transition: all .6s;
+					background-size: 100% 100%;
+					&_icon{
+						@extend .swiper_button_icon;
+						background: url(../../../public/images/arrow_left.svg) 50% 50% no-repeat;
+						background-size: auto 40%;
+					}
+					&:hover{
+						background-image: linear-gradient(300deg, $allColor2 0%, $allColor1);
+						background-size: 500% 500%;
+						transition: all .3s;
+						.swiper_button_prev2_icon{
+							transform: translate(-50%,-50%) translate3d(-2px,0px,0);
+						}
+					}
+				}
+				.swiper_button_next2{
+					background: linear-gradient(212deg, $allColor1 0%, $allColor1);
+					transition: all .6s;
+					background-size: 100% 100%;
+					&_icon{
+						@extend .swiper_button_icon;
+						background: url(../../../public/images/arrow_right.svg) 50% 50% no-repeat;
+						background-size: auto 40%;
+					}
+					&:hover{
+						background-image: linear-gradient(90deg, $allColor2 0%, $allColor1);
+						background-size: 300% 100%;
+						background-position: 100% 0;
+						transition: all .3s;
+						.swiper_button_next2_icon{
+							transform: translate(-50%,-50%) translate3d(2px,0px,0);
+						}
+					}
+				}
+
+			}
+			
+		}
+	}
+}
+.Marquee_container{
+	display: flex;
+	img{
+		// max-width: 80px;
+		margin: 3rem;
+		padding: 0px;
+		display: block;
+		opacity: .2;
+	}
+}
+
+//scroll
+.js-cont{
+	position: relative;
+	@include wh(100%,100%);
+	display: block;
+}
+.js-scroll{
+	@include fix($w:100%,$t:0,$l:0);
+	z-index: 10;
+	overflow: hidden;
+	will-change: transform;
+}
+
+/*=============================================
+=                     RWD                     =
+=============================================*/
+@include rwd(max,1200){
+	.Kv{
+		&_block{
+			&_center{
+				&_1100{
+					max-width: 85%;
+				}
+			}
+		}
+	}
+	.Btn{
+		&_single{
+			font-size: 16px;
+			transition: all .6s;
+			&_small{
+				font-size: 1.1vw;
+				width: 100%;
+				text-align: center;
+				padding: 5px 5px 8px;
+			}
+		}
+	}
+	.spc{
+		&Box{
+			&_40{
+				width: 100%;
+			}
+		}
+	}
+	.Txt{
+		&_h2{
+			font-size: 5vw;
+		}
+		&_h5{
+			font-size: 1.5vw;
+		}
+		&_dec{
+			font-size: 2vw;
+			transition: all .6s;
+		}
+	}
+	.List{
+		&_done{
+			li{
+				p{
+					font-size: 1.5vw;
+				}
+				&:first-child{
+					margin: 0;
+				}
+			}
+		}
+	}
+	.Marquee_container{
+		img{
+			@include wh(40px,40px);
+			margin: 2rem;
+			transition: all .6s;
+		}
+	}
+	.Swiper{
+		&_single{
+			&_perbox{
+				&_btnCombin{
+					&_20{
+						padding: 1rem;
+					}
+					.swiper_button_next2,.swiper_button_prev2{
+						@include wh(25px,25px);
+						margin: 0 .3rem;
+					}
+				}
+				.swiper-slide{
+					width: 28%;
+				}
+				
+			}
+		}
+	}
+}
+@include rwd(max,1024){
+	.Txt{
+		&_h2{
+			font-size: 60px;
+		}
+		&_h3{
+			font-size: 28px;
+		}
+		&_h5{
+			font-size: 16px;
+		}
+		&_dec{
+			font-size: 16px;
+		}
+	}
+	.Btn{
+		&_single{
+			font-size: 20px;
+			height: auto;
+		}
+	}
+	.Border{
+		&_center{
+			padding: 1.5rem 0;
+		}
+	}
+	.List{
+		&_done{
+			li{
+				p{
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+@include rwd(max,768){
+	
+	.Txt{
+		&_dec{
+			font-size: 16px;
+		}
+		&_h2{
+			font-size: 36px;
+		}
+	}
+	.menu{
+		&_MB{
+			display: block;
+			&_Btn{
+				display: inline-block;
+			}
+		}
+	}
+	.Btn{
+		&_single{
+			&_small{
+				font-size: 16px;
+			}
+		}
+	}
+	.Border{
+		&_center{
+			padding: 0;
+			margin: 1rem auto 3rem;
+		}	
+	}
+	.spc{
+		&Block{
+			&_60{
+				width: 100%;
+			}
+			&_40{
+				width: 100%;
+				margin: 1rem auto .5rem;
+			}
+		}
+	}
+	.Swiper{
+		&_single{
+			&_perbox{
+				.swiper-slide{
+					width: 60%;
+				}
+				&_btnCombin{
+                    &_80{
+                        width: 60%;
+						transform: translate3d(0,0,0);
+                    }
+                    &_20{
+						padding: 0 1rem 1rem;
+                        @include wh(40%,auto);
+                    }
+                }
+			}
+		}
+	}
+	.List{
+		&_done{
+			margin: 0 auto;
+			li{
+				width: 100%;
+				margin: 5px 0;
+				&:nth-child(1){
+					margin: 5px 0;
+				}
+				p{
+					font-size: 16px;
+					line-height: 1.7;
+					width: 85%;
+					vertical-align: top;
+				}
+			}
+		}
+	}
+	.icon{
+		&_done{
+			@include wh(20px,20px);
+			&:before{
+				@include wh(3px,7px);
+			}
+		}
+	}
+	.on{
+		.menu{
+			&_Mb{
+				&_Btn{
+					display: inline-block;
+				}
+				&_Wrap{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

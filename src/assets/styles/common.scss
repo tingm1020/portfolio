@@ -1,0 +1,50 @@
+/*=============================================
+=                 common.scss                 =
+=============================================*/
+//定寬高
+@mixin wh($w,$h){
+	width:$w;
+	height:$h;
+}
+//絕對定位+寬高+背景
+@mixin abs($t:null,$r:null,$b:null,$l:null,$w:null,$h:null,$path:null){
+	display: block;
+	position:absolute;
+	top:$t;
+	right:$r;
+	bottom:$b;
+	left:$l;
+	width:$w;
+	height:$h;
+	@if $path != null{
+		width:image-width($path);
+		height:image-height($path);
+		background: image-url($path,false,false) 0 0 no-repeat;
+	}
+}
+//fixed定位+寬高
+@mixin fix($t:null,$r:null,$b:null,$l:null,$w:null,$h:null,$path:null){
+	position:fixed;
+	top:$t;
+	right:$r;
+	bottom:$b;
+	left:$l;
+	width:$w;
+	height:$h;
+	@if $path != null{
+		width:image-width($path);
+		height:image-height($path);
+		background: image-url($path,false,false) 0 0 no-repeat;
+	}
+}
+
+//=============================================
+//=            detect browser width           =
+//=============================================
+//單獨定max或min
+@mixin rwd($maxmin, $width) {
+	@media screen and (#{$maxmin}-width: $width) {  
+	  @content;
+	}
+  }
+  

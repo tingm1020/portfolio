@@ -1,0 +1,337 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './_base.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+
+/*=============================================
+=                    base                     =
+=============================================*/
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+}
+/*=============================================
+=                  Gsap module                =
+=============================================*/
+.cluster{
+    position: relative;
+    @include wh(100%,792px);
+    max-width: 874px;
+    margin: 100px auto;
+    background-color: transparent;
+    padding-bottom: 100px;
+    &Pieces{
+        position: absolute;
+    }
+}
+.circle{
+    @include wh(100%,360px);
+    max-width: 360px;
+    border-radius: 50%;
+    background-color: $allColor1;
+    left: 214px;
+    bottom: 0;
+    z-index: 1;
+}
+.dotsBlue{
+    @include wh(100%,auto);
+    max-width: 494px;
+    min-height: 434px;
+    z-index: 3;
+    left: 0;
+    top: 80px;
+}
+.owlHorned{
+    @include wh(100%,auto);
+    max-width: 450px;
+    max-height: 700px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.Gsap{
+    &_container{
+        overflow: hidden;
+    }
+    &_Txt{
+        &_h3{
+            font-weight: 300;
+            text-indent: -3px;
+        }
+    }
+    &_single{
+        &_perbox{
+            position: relative;
+            display: block;
+            @include wh(100%,70vh);
+            background: $allColor5;
+            border-radius: 30px;
+        }
+        &_perblock{
+            &_left{
+                margin: 5%;
+                vertical-align: middle;
+            }
+            &_right{
+                margin: 5%;
+                vertical-align: middle;
+            }
+            // &_top{
+            //     display: none;
+            // }
+        }
+    }
+    &_block{
+        @include abs($w:100%,$h:auto,$t:50%,$l:50%);
+        transform: translate(-50%,-50%);
+        box-sizing: border-box;
+    }
+    &_chat{
+        &_block{
+            position: relative;
+            display: inline-block;
+            vertical-align: bottom;
+            width: 45%;
+            padding: 2%;
+            box-sizing: border-box;
+            &:first-child{
+                .Gsap_chat_box{
+                    &:nth-child(2){
+                        min-height: 100px;
+                    }
+                    &:nth-child(4){
+                        min-height: 200px;
+                    }
+                }
+            }
+            &:last-child{
+                .Gsap_chat_box{
+                    &:nth-child(1){
+                        min-height: 300px;
+                    }
+                    &:nth-child(5){
+                        min-height: 100px;
+                    }
+                }
+            }
+        }
+        &_box{
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 5% 0;
+            padding: 5%;
+            box-sizing: border-box;
+            border-radius: 20px;
+            min-height: 150px;
+            background: rgba(255,255,255, .4);
+            &_main{
+                background: #fff;
+            }
+        }
+        &_dec{
+            position: relative;
+            display: inline-block;
+            margin-top: 5%;
+            font-size: 1vw;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        &_role{
+            @extend .comRel;
+            display: inline-block;
+            margin: 5% auto;
+            &_img{
+                @extend .comRel;
+                display: inline-block;
+                vertical-align: middle;
+                @include wh(30px,30px);
+                border-radius: 100%;
+            }
+            &_dec{
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                width: calc(100% - 30px);
+                padding: 0 3%;
+                box-sizing: border-box;
+                font-weight: 300;
+                font-size: .9vw;
+            }
+        }
+    }
+    &_txtBox{
+        &_tag{
+            position: relative;
+            display: block;
+            font-size: 1vw;
+            line-height: 1.2;
+            font-weight: 800;
+            &:before{
+                content: '';
+                position: relative;
+                display: inline-block;
+                @include wh(8px,8px);
+                background: $allColor2;
+                border-radius: 100%;
+                vertical-align: middle;
+                line-height: 1;
+                margin: 0 5px 3px 0;
+            }
+        }
+        &_dec{
+            position: relative;
+            display: block;
+            font-size: 1.1vw;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+    }
+}
+
+/*=============================================
+=                     RWD                     =
+=============================================*/
+@include rwd(max,1440){
+    .Gsap{
+        &_single{
+            &_perbox{
+                height: 600px;
+            }
+        }
+    }
+}
+@include rwd(max,1100){
+    .Gsap{
+        &_txtBox{
+            &_tag{
+                font-size: 1.3vw;
+            }
+        }
+        &_chat{
+            &_dec{
+                font-size: 1.3vw;
+            }
+            &_box{
+                padding: 8%;
+
+            }
+            &_block{
+                &:first-child{
+                    .Gsap_chat_box{
+                        &:nth-child(2){
+                            min-height: 150px;
+                        }
+                        &:nth-child(4){
+                            min-height: 250px;
+                        }
+                    }
+                }
+                &:last-child{
+                    .Gsap_chat_box{
+                        &:nth-child(1){
+                            min-height: 350px;
+                        }
+                        &:nth-child(5){
+                            min-height: 150px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include rwd(max,991){
+    .Gsap{
+        &_txtBox{
+            &_tag{
+                font-size: 16px;
+            }
+            &_dec{
+                font-size: 14px;
+            }
+        }
+        &_chat{
+            &_dec{
+                font-size: 14px;
+            }
+            &_role{
+                margin: 5% auto 2% 0;
+            }
+        }
+    }
+}
+@include rwd(max,768){
+    .Gsap{
+        &_chat{
+            &_block{
+                width: 90%;
+                padding: 0 5%;
+                &:first-child{
+                    .Gsap_chat_box{
+                        &:nth-child(2){
+                            display: none;
+                        }
+                        &:nth-child(4){
+                            display: none;
+                        }
+                        &:nth-child(5){
+                            min-height: 80px;
+                        }
+                    }
+                }
+                &:last-child{
+                    .Gsap_chat_box{
+                        &:nth-child(1),&:nth-child(2){
+                            display: none;
+                        }
+                        &:nth-child(4){
+                            min-height: 280px;
+                        }
+                    }
+                    
+                }
+            }
+            &_box{
+                min-height: 50px;
+                padding: 3% 5% 3% 8%;
+            }
+            &_role{
+                &_dec{
+                    font-size: 12px;
+                }
+            }
+        }
+        &_single{
+            &_perblock{
+                // &_top{
+                //     display: block;
+                // }
+                &_left{
+                    display: none;
+                }
+            }
+        }
+    }
+}
