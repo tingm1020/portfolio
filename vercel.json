@@ -1,4 +1,5 @@
 {
-    "buildCommand": "npm run build && npm run export",
-    "outputDirectory": "out"
+    "buildCommand": "next build",
+    "outputDirectory": "out",
+    "rewrites": []
 }
