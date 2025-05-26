@@ -18,7 +18,7 @@ const HomePage = () => {
         <Header/>
         <div className="Kv_container" id="anchor1">
           <div className={`Kv_block Kv_block_center_1100 ${stylesIndex.Kv_spc}`}>
-            <h2 className="Txt_h2">See. Explore.</h2>
+            <h2 className="Txt_h2">See. Explore. Code.</h2>
             <p className="Txt_dec spcBlock_60">探索一系列透過功能性呈現議題內容的前端開發作品。</p>
             <a href="https://github.com/tingm1020?tab=projects" target="_blank" className="Btn_single">Read More</a>
           </div>
