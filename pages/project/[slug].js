@@ -1,12 +1,21 @@
-import { useRouter } from 'next/router';
-import ProjectDetail from '@/components/project/projectDetail';
+// pages/project/[slug].js
 
-    export default function ProjectDetailPage() {
-        const router = useRouter();
-        const { slug } = router.query;
+const ProjectDetail = () => {
+  return <div>這是專案列表</div>;
+};
 
-        // 模擬從資料庫抓資料
-        const projectData = getProjectDataBySlug(slug);
+export default ProjectDetail;
 
-    return <ProjectDetail data={projectData} />;
+// 臨時 stub：避免部署錯誤，可之後再實作資料讀取
+export async function getStaticPaths() {
+  return {
+    paths: [], // 沒有可預渲染的頁面
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {}, // 暫時不傳資料
+  };
 }
