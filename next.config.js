@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isStaticExport = process.env.NEXT_EXPORT === 'true';
+
 const nextConfig = {
-  output: 'export',
+  ...(isStaticExport && {
+    output: 'export',
+    assetPrefix: './',
+  }),
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -12,7 +17,6 @@ const nextConfig = {
       },
     ],
   },
-  assetPrefix: './',
 };
 
 module.exports = nextConfig;
