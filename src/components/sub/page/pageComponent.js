@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 import stylesPage from '../../../assets/styles/Page.module.scss';
 import MarqueeComponent from "../marquee/marqueeComponent";

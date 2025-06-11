@@ -1,4 +1,3 @@
-import React from "react";
 import stylesLoad from '../../../assets/styles/Load.module.scss';
 
 const LoadVariant1 = () => {

@@ -374,7 +374,7 @@ svg{
 			box-sizing: border-box;
 			z-index: 12;
 			display: none;
-			i{
+			span{
 				position: relative;
 				display: block;
 				@include wh(23px,3px);

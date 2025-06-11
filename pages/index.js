@@ -1,5 +1,4 @@
 import {React} from "react";
-import Header from "../src/components/Header";
 import stylesIndex from "../src/assets/styles/Index.module.scss";
 import SwiperComponent from "../src/components/sub/swiper/swiperComponent";
 import MarqueeComponent from "../src/components/sub/marquee/marqueeComponent";
@@ -8,6 +7,7 @@ import GsapComponent from "../src/components/sub/gsap/gsapComponent";
 import LoadComponent from "../src/components/sub/load/loadComponent";
 import FooterComponent from "../src/components/Footer";
 import { motion } from "framer-motion";
+import HeaderComponent from "../src/components/Header";
 
 
 const HomePage = () => {
@@ -15,7 +15,7 @@ const HomePage = () => {
     <div>
       <div className={stylesIndex.wrapper}>
         <LoadComponent variant="variant1" />
-        <Header/>
+        <HeaderComponent variant="variant1" />
         <div className="Kv_container" id="anchor1">
           <div className={`Kv_block Kv_block_center_1100 ${stylesIndex.Kv_spc}`}>
             <h2 className="Txt_h2">See. Explore.</h2>

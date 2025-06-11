@@ -1,0 +1,51 @@
+/* module.css要適應的新特性 */
+/* composes: OOO 用來直接繼承一個CSS的組合 */
+/* 全局樣式:global */
+@import './_base.scss';
+/*=============================================
+=               specific setting             =
+=============================================*/
+// color
+$allColor1:#2b2b29;
+$allColor2:#b18c67;
+$allColor3:#ccbfb7;
+$allColor4:#a9a9a9; 
+$allColor5:#e1dcd6;
+$allColor6:#f5f5f5;
+$allColor7:#dddddd;
+$allColor8:#ede8e2;
+
+// page
+$pageColor1: #f7f8f2;
+
+/*=============================================
+=                    base                     =
+=============================================*/
+
+.comRel{
+	position: relative;
+	@include wh(100%,auto);
+	margin: 0 auto;
+}
+.comFix{
+    @include fix($w:100%,$h:auto,$t:0,$l:0);
+    margin: 0 auto;
+    &_center{
+        @extend .comFix;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+/*=============================================
+=                   project                   =
+=============================================*/
+.wrapper{
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    display: block;
+    min-height: 750px;
+    background: $pageColor1;
+    transition: all .6s;
+}

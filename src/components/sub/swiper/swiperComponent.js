@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/bundle';
 import 'swiper/css';
@@ -8,8 +8,7 @@ import 'swiper/css/effect-fade';
 import Image from "next/image";
 import stylesSwiper from '../../../assets/styles/Swiper.module.scss';
 import { motion } from "framer-motion";
-// import { title } from "process";
-// import { useRaf } from "react-use";
+
 
 const SwiperVariant1 = () =>{
     return (

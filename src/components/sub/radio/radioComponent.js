@@ -1,4 +1,3 @@
-import { React } from "react";
 import stylesPage from '../../../assets/styles/Page.module.scss';
 
 const RadioComponent = ({ onChange, options, defaultValue }) => {
