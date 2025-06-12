@@ -152,6 +152,39 @@ $pageColor1: #f7f8f2;
 			}
 		}
 	}
+	&_hover{
+		&CollectMenu{
+			// position: relative;
+			position: absolute;
+			background: #fff;
+			@include wh(40%,auto);
+			border-radius: 15px;
+			left: 50%;
+			top: 5px;
+			transform: translate(-50%,0);
+			box-shadow: 0 10px 15px rgba(200,200,200,.1);
+			&_block{
+				position: relative;
+				padding: 10px;
+				box-sizing: border-box;
+			}
+			&_section{
+				color: #000;
+				line-height: 1.4;
+				&_box{
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					h4{
+						font-size: 18px;
+					}
+					p{
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
 }
 /*=============================================
 =                     RWD                     =

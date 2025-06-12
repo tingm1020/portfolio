@@ -136,12 +136,14 @@ const HeaderVariant1 = () => {
 };
 const HeaderVariant2 = () =>{
     const [showSubmenu, setShowSubmenu] = useState(false);
+    const hoverSections = [
+        { title: "專案介紹", content: "測試內容"},
+        { title: "技能專長", content: "測試內容"},
+        { title: "專案拆解", content: "測試內容"},
+        { title: "深入歷程", content: "測試內容"},
+    ];
     return (
-        <div 
-            onMouseEnter={() => setShowSubmenu(true)}
-            onMouseLeave={() => setShowSubmenu(false)}
-            className={stylesHeader.Header_style1}
-        >
+        <div className={`${stylesHeader.Header_singleEquallyLine} ${stylesHeader.Header_style1}`}>
             <div className={stylesHeader.Header_style1_block}>
                 <div className={stylesHeader.menu_posLeft}>
                     <a
@@ -150,7 +152,7 @@ const HeaderVariant2 = () =>{
                         className={stylesHeader.menu_logo_img}
                     >
                         <Image
-                            src="/image/menu_logo.svg"
+                            src="/images/menu_logo.svg"
                             alt="menu_logo"
                             width={50}
                             height={50}
@@ -161,25 +163,64 @@ const HeaderVariant2 = () =>{
                 <div className={stylesHeader.menu_PC}>
                     <div className={stylesHeader.menu_posCenter}>
                         <div className={stylesHeader.menu_block}>
-                            <button
-                                className={stylesHeader.menu_menuBtn}
-                                onMouseEnter={() => setHoveredBtn("intro")}
-                                onMouseLeave={() => setHoveredBtn(null)}
+                            <div 
+                                className={stylesHeader.menu_hoverGroup}
+                                onMouseEnter={() => setShowSubmenu("intro")}
                             >
-                            深入歷程
-                            {showSubmenu && 
-                                <div className={stylesHeader.menu_hoverMenu}>
-                                </div>
-                            }
-                            </button>
+                                <button className={stylesHeader.menu_menuBtn}>part1</button>
+                                
+                            </div>
+                            <div 
+                                className={stylesHeader.menu_hoverGroup}
+                                onMouseEnter={() => setShowSubmenu("project")}
+                            >
+                                <button className={stylesHeader.menu_menuBtn}>part2</button>
+                            </div>
+                           
+                            
                         </div>
                     </div>
+                    <div className={stylesHeader.menu_posRight}>
+                        <button
+                            className={stylesHeader.menu_menuBtnSingle}
+                            onClick={() =>{window.location.herf = 'mailto:tingm1020@icloud.com'}}
+                        >
+                        Contact
+                        </button>
+                    </div>
+                    <div className="clear"></div>
+                    
                 </div>
-                <button className={stylesHeader.menu_menuBtnSingle}></button>
                 
             </div>
-        
+            
+            {showSubmenu && 
+                <div 
+                    className={stylesHeader.menu_hoverCollectMenu}
+                    onMouseEnter={() => setShowSubmenu(showSubmenu)}
+                    onMouseLeave={() => setShowSubmenu(null)}
+                >
+                    {showSubmenu === "intro" && 
+                        <div className={stylesHeader.menu_hoverCollectMenu_block}>
+                            <div className={stylesHeader.menu_hoverCollectMenu_section}>
+                                {hoverSections.map((item, index) => (
+                                    <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
+                                        <h4>{item.title}</h4>
+                                        <p>{item.content}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    }
+                    {showSubmenu === "project" &&
+                        <div className={stylesHeader.menu_hoverCollectMenu_block}>
+
+                        </div>
+                    }
+                </div>
+            }
         </div>
+        
     );
 };
 
