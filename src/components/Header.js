@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import stylesHeader from "../assets/styles/Header.module.scss";
-
+import { motion } from "framer-motion";
 
 const HeaderVariant1 = () => {
 
@@ -137,10 +137,9 @@ const HeaderVariant1 = () => {
 const HeaderVariant2 = () =>{
     const [showSubmenu, setShowSubmenu] = useState(false);
     const hoverSections = [
-        { title: "專案介紹", content: "測試內容"},
-        { title: "技能專長", content: "測試內容"},
-        { title: "專案拆解", content: "測試內容"},
-        { title: "深入歷程", content: "測試內容"},
+        { title: "近期專案介紹", content: "展示風格與實作邏輯"},
+        { title: "專案拆解", content: "呈現開發流程與技術選擇"},
+        { title: "深入歷程", content: "聚焦挑戰與解法脈絡"},
     ];
     return (
         <div className={`${stylesHeader.Header_singleEquallyLine} ${stylesHeader.Header_style1}`}>
@@ -163,21 +162,18 @@ const HeaderVariant2 = () =>{
                 <div className={stylesHeader.menu_PC}>
                     <div className={stylesHeader.menu_posCenter}>
                         <div className={stylesHeader.menu_block}>
-                            <div 
-                                className={stylesHeader.menu_hoverGroup}
+                            <button 
+                                className={stylesHeader.menu_menuBtn}
                                 onMouseEnter={() => setShowSubmenu("intro")}
                             >
-                                <button className={stylesHeader.menu_menuBtn}>part1</button>
-                                
-                            </div>
-                            <div 
-                                className={stylesHeader.menu_hoverGroup}
+                            intro
+                            </button>
+                            <button 
+                                className={stylesHeader.menu_menuBtn}
                                 onMouseEnter={() => setShowSubmenu("project")}
                             >
-                                <button className={stylesHeader.menu_menuBtn}>part2</button>
-                            </div>
-                           
-                            
+                            part2
+                            </button>
                         </div>
                     </div>
                     <div className={stylesHeader.menu_posRight}>
@@ -194,31 +190,39 @@ const HeaderVariant2 = () =>{
                 
             </div>
             
-            {showSubmenu && 
-                <div 
+            {showSubmenu && (
+                <motion.div 
                     className={stylesHeader.menu_hoverCollectMenu}
+                    initial={{ opacity:0, y:-50, x:"-50%"}}
+                    animate={{ opacity:1, y:0, x:"-50%"}}
+                    exit={{ opacity:0, y:-50, x: "-50%"}}
+                    transition={{ duration: .3 }}
+                  
                     onMouseEnter={() => setShowSubmenu(showSubmenu)}
-                    onMouseLeave={() => setShowSubmenu(null)}
+                    // onMouseLeave={() => setShowSubmenu(null)}
                 >
-                    {showSubmenu === "intro" && 
-                        <div className={stylesHeader.menu_hoverCollectMenu_block}>
-                            <div className={stylesHeader.menu_hoverCollectMenu_section}>
-                                {hoverSections.map((item, index) => (
-                                    <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
-                                        <h4>{item.title}</h4>
-                                        <p>{item.content}</p>
-                                    </div>
-                                ))}
-                            </div>
+                {showSubmenu === "intro" &&  (
+                    <div className={stylesHeader.menu_hoverCollectMenu_block}>
+                        <div className={`${stylesHeader.menu_hoverCollectMenu_section} ${stylesHeader.menu_hoverCollectMenu_section_single100}`}>
+                            {hoverSections.map((item, index) => (
+                                <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
+                                    <h4>
+                                        {item.title}
+                                        <span className={stylesHeader.menu_menuBtn_arrow}></span>
+                                    </h4>
+                                    <p>{item.content}</p>
+                                </div>
+                            ))}
                         </div>
-                    }
-                    {showSubmenu === "project" &&
-                        <div className={stylesHeader.menu_hoverCollectMenu_block}>
+                    </div>
+                )}
+                {showSubmenu === "project" && (
+                    <div className={stylesHeader.menu_hoverCollectMenu_block}>
 
-                        </div>
-                    }
-                </div>
-            }
+                    </div>
+                )}
+                </motion.div>
+            )}
         </div>
         
     );

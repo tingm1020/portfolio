@@ -151,17 +151,21 @@ $pageColor1: #f7f8f2;
 				transition: all .6s;
 			}
 		}
+		&_arrow{
+			position: relative;
+			display: inline-block;
+			@include wh(15px,15px);
+			background: url(../../../public/images/arrow_right_000000.svg) 50% 50% no-repeat;
+			margin: 0 8px -1px;
+		}
 	}
 	&_hover{
 		&CollectMenu{
-			// position: relative;
-			position: absolute;
+			@include abs($w:40%,$h:auto,$l:50%,$t:100%);
 			background: #fff;
-			@include wh(40%,auto);
 			border-radius: 15px;
-			left: 50%;
-			top: 5px;
-			transform: translate(-50%,0);
+			z-index: 10;
+			transform: translateX(-50%);
 			box-shadow: 0 10px 15px rgba(200,200,200,.1);
 			&_block{
 				position: relative;
@@ -171,15 +175,34 @@ $pageColor1: #f7f8f2;
 			&_section{
 				color: #000;
 				line-height: 1.4;
+				display: grid;
+				grid-auto-flow: column;
+				grid-template-rows: repeat(4, auto);
+				gap: 1rem;
+				&_single100{
+					.menu_hoverCollectMenu_section_box{
+						width: 100%;
+					}
+				}
 				&_box{
 					position: relative;
-					display: flex;
-					flex-direction: column;
+					width: 50%;
+					padding: 20px;
+					box-sizing: border-box;
 					h4{
+						position: relative;
+						display: inline-block;
+						letter-spacing: 1px;
 						font-size: 18px;
+						margin: 0 0 .5rem;
 					}
 					p{
-						font-size: 16px;
+						font-size: 14px;
+					}
+					&:hover{
+						background: #f4f4f4;
+						border-radius: 15px;
+						transition: all .3s;
 					}
 				}
 			}
