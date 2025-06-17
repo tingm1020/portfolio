@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import stylesHeader from "../assets/styles/Header.module.scss";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { style } from "framer-motion/client";
 
 const HeaderVariant1 = () => {
 
@@ -136,10 +137,14 @@ const HeaderVariant1 = () => {
 };
 const HeaderVariant2 = () =>{
     const [showSubmenu, setShowSubmenu] = useState(false);
-    const hoverSections = [
+    const hoverSectionIndex = [
         { title: "近期專案介紹", content: "展示風格與實作邏輯"},
         { title: "專案拆解", content: "呈現開發流程與技術選擇"},
         { title: "深入歷程", content: "聚焦挑戰與解法脈絡"},
+    ];
+    const hoverSectionProject = [
+        { title: "精選案例", content: "近期完成的代表作品"},
+        { title: "專案地圖", content: "快速搜尋與瀏覽歷年作品"},
     ];
     return (
         <div className={`${stylesHeader.Header_singleEquallyLine} ${stylesHeader.Header_style1}`}>
@@ -172,7 +177,7 @@ const HeaderVariant2 = () =>{
                                 className={stylesHeader.menu_menuBtn}
                                 onMouseEnter={() => setShowSubmenu("project")}
                             >
-                            part2
+                            project
                             </button>
                         </div>
                     </div>
@@ -189,40 +194,52 @@ const HeaderVariant2 = () =>{
                 </div>
                 
             </div>
-            
-            {showSubmenu && (
-                <motion.div 
-                    className={stylesHeader.menu_hoverCollectMenu}
-                    initial={{ opacity:0, y:-50, x:"-50%"}}
-                    animate={{ opacity:1, y:0, x:"-50%"}}
-                    exit={{ opacity:0, y:-50, x: "-50%"}}
-                    transition={{ duration: .3 }}
-                  
-                    onMouseEnter={() => setShowSubmenu(showSubmenu)}
-                    // onMouseLeave={() => setShowSubmenu(null)}
-                >
-                {showSubmenu === "intro" &&  (
-                    <div className={stylesHeader.menu_hoverCollectMenu_block}>
-                        <div className={`${stylesHeader.menu_hoverCollectMenu_section} ${stylesHeader.menu_hoverCollectMenu_section_single100}`}>
-                            {hoverSections.map((item, index) => (
-                                <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
-                                    <h4>
-                                        {item.title}
-                                        <span className={stylesHeader.menu_menuBtn_arrow}></span>
-                                    </h4>
-                                    <p>{item.content}</p>
-                                </div>
-                            ))}
+            <AnimatePresence mode="wait">
+                {showSubmenu && (
+                    <motion.div 
+                        key="submenu"
+                        className={stylesHeader.menu_hoverCollectMenu}
+                        initial={{ opacity:0, y:-50, x: '-50%'}}
+                        animate={{ opacity:1, y:0, x:'-50%'}}
+                        exit={{ opacity:0, y:-50, x: '-50%'}}
+                        transition={{ duration: .3 }}
+                        onMouseEnter={() => setShowSubmenu(showSubmenu)}
+                        onMouseLeave={() => setShowSubmenu(null)}
+                    >
+                    {showSubmenu === "intro" &&  (
+                        <div className={stylesHeader.menu_hoverCollectMenu_block}>
+                            <div className={`${stylesHeader.menu_hoverCollectMenu_section} ${stylesHeader.menu_hoverCollectMenu_section_single100}`}>
+                                {hoverSectionIndex.map((item, index) => (
+                                    <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
+                                        <h4>
+                                            {item.title}
+                                            <span className={stylesHeader.menu_menuBtn_arrow}></span>
+                                        </h4>
+                                        <p>{item.content}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    )}
+                    {showSubmenu === "project" && (
+                        <div className={stylesHeader.menu_hoverCollectMenu_block}>
+                            <div className={`${stylesHeader.menu_hoverCollectMenu_section} ${stylesHeader.menu_hoverCollectMenu_section_single100}`}>
+                                {hoverSectionProject.map((item, index) => (
+                                    <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
+                                        <h4>
+                                            {item.title}
+                                            <span className={stylesHeader.menu_menuBtn_arrow}></span>
+                                        </h4>
+                                        <p>{item.content}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    </motion.div>
                 )}
-                {showSubmenu === "project" && (
-                    <div className={stylesHeader.menu_hoverCollectMenu_block}>
-
-                    </div>
-                )}
-                </motion.div>
-            )}
+            </AnimatePresence>
+            
         </div>
         
     );
