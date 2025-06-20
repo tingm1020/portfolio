@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import stylesHeader from "../assets/styles/Header.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { style } from "framer-motion/client";
 
 const HeaderVariant1 = () => {
 
@@ -136,16 +136,31 @@ const HeaderVariant1 = () => {
     )
 };
 const HeaderVariant2 = () =>{
+    const router = useRouter();
+    const handleNavClick = (item) => {
+        if (item.link) {
+            router.push(item.link);
+        } else if (item.anchor) {
+            if(router.pathname === "/") {
+                const el = document.getElementById(item.anchor);
+                if (el) el.scrollIntoView({ behavior: "smooth"});
+            } else{
+                router.push(`/#${item.anchor}`);
+            }
+        }
+    };
     const [showSubmenu, setShowSubmenu] = useState(false);
     const hoverSectionIndex = [
-        { title: "近期專案介紹", content: "展示風格與實作邏輯"},
-        { title: "專案拆解", content: "呈現開發流程與技術選擇"},
-        { title: "深入歷程", content: "聚焦挑戰與解法脈絡"},
+        { title: "近期專案介紹", content: "展示風格與實作邏輯", link: "/#introProject"},
+        { title: "專案拆解", content: "呈現開發流程與技術選擇", link: "/#introPlugin"},
+        { title: "深入歷程", content: "聚焦挑戰與解法脈絡", link: "/#introProcess"},
     ];
     const hoverSectionProject = [
-        { title: "精選案例", content: "近期完成的代表作品"},
-        { title: "專案地圖", content: "快速搜尋與瀏覽歷年作品"},
+        { title: "精選案例", content: "近期完成的代表作品", link: "/#projectFeatured"},
+        { title: "專案地圖", content: "快速搜尋與瀏覽歷年作品", link: "/#projectOverview"},
     ];
+
+
     return (
         <div className={`${stylesHeader.Header_singleEquallyLine} ${stylesHeader.Header_style1}`}>
             <div className={stylesHeader.Header_style1_block}>
@@ -204,13 +219,17 @@ const HeaderVariant2 = () =>{
                         exit={{ opacity:0, y:-50, x: '-50%'}}
                         transition={{ duration: .3 }}
                         onMouseEnter={() => setShowSubmenu(showSubmenu)}
-                        onMouseLeave={() => setShowSubmenu(null)}
+                        // onMouseLeave={() => setShowSubmenu(null)}
                     >
                     {showSubmenu === "intro" &&  (
                         <div className={stylesHeader.menu_hoverCollectMenu_block}>
                             <div className={`${stylesHeader.menu_hoverCollectMenu_section} ${stylesHeader.menu_hoverCollectMenu_section_single100}`}>
                                 {hoverSectionIndex.map((item, index) => (
-                                    <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
+                                    <div 
+                                        className={stylesHeader.menu_hoverCollectMenu_section_box} 
+                                        key={index}
+                                        onClick={() => handleNavClick(item)}
+                                    >
                                         <h4>
                                             {item.title}
                                             <span className={stylesHeader.menu_menuBtn_arrow}></span>

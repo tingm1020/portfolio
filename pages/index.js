@@ -1,4 +1,6 @@
 import {React} from "react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import stylesIndex from "../src/assets/styles/Index.module.scss";
 import SwiperComponent from "../src/components/sub/swiper/swiperComponent";
 import MarqueeComponent from "../src/components/sub/marquee/marqueeComponent";
@@ -8,15 +10,29 @@ import LoadComponent from "../src/components/sub/load/loadComponent";
 import FooterComponent from "../src/components/Footer";
 import { motion } from "framer-motion";
 import HeaderComponent from "../src/components/Header";
+import { constants } from "buffer";
 
 
 const HomePage = () => {
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.asPath.includes("#")){
+      const anchor = router.asPath.split("#")[1];
+      const el = document.getElementById(anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth"});
+      }
+    }
+  }, [router.asPath]);
+
   return(
     <div>
       <div className={stylesIndex.wrapper}>
         <LoadComponent variant="variant1" />
         <HeaderComponent variant="variant1" />
-        <div className="Kv_container" id="anchor1">
+        <div className="Kv_container" id="introProject">
           <div className={`Kv_block Kv_block_center_1100 ${stylesIndex.Kv_spc}`}>
             <h2 className="Txt_h2">See. Explore.</h2>
             <p className="Txt_dec spcBlock_60">探索一系列透過功能性呈現議題內容的前端開發作品。</p>
@@ -35,7 +51,7 @@ const HomePage = () => {
             <SwiperComponent variant="variant1" />
           </div>
         </motion.div>
-        <div className={`Page_container ${stylesIndex.Page_container_black}`} id="anchor3">
+        <div className={`Page_container ${stylesIndex.Page_container_black}`} id="introPlugin">
           <MarqueeComponent variant="variant2" />
           <div className="block_90">
             <div className={`Txt_box ${stylesIndex.Txt_box_left}`}>
@@ -63,7 +79,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className={`Page_container ${stylesIndex.Page_dec_mb_black}`} id="anchor4">
+        <div className={`Page_container ${stylesIndex.Page_dec_mb_black}`} id="introProcess">
           <div className="block_90">
             <div className={`Txt_box ${stylesIndex.Txt_box_top}`}>
             <div className={stylesIndex.Txt_box_h5}>專案亮點</div>
