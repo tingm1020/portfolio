@@ -156,8 +156,8 @@ const HeaderVariant2 = () =>{
         { title: "深入歷程", content: "聚焦挑戰與解法脈絡", link: "/#introProcess"},
     ];
     const hoverSectionProject = [
-        { title: "精選案例", content: "近期完成的代表作品", link: "/#projectFeatured"},
-        { title: "專案地圖", content: "快速搜尋與瀏覽歷年作品", link: "/#projectOverview"},
+        { title: "精選案例", content: "近期完成的代表作品", link: "/project#projectFeatured"},
+        { title: "專案地圖", content: "快速搜尋與瀏覽歷年作品", link: "/project#projectOverview"},
     ];
 
 

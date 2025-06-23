@@ -10,7 +10,6 @@ import LoadComponent from "../src/components/sub/load/loadComponent";
 import FooterComponent from "../src/components/Footer";
 import { motion } from "framer-motion";
 import HeaderComponent from "../src/components/Header";
-import { constants } from "buffer";
 
 
 const HomePage = () => {
@@ -20,10 +19,13 @@ const HomePage = () => {
   useEffect(() => {
     if (router.asPath.includes("#")){
       const anchor = router.asPath.split("#")[1];
-      const el = document.getElementById(anchor);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth"});
-      }
+      const scrollToAnchor = () => {
+        const el = document.getElementById(anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth"});
+        }
+      };
+      setTimeout(scrollToAnchor, 1000);
     }
   }, [router.asPath]);
 
@@ -79,7 +81,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className={`Page_container ${stylesIndex.Page_dec_mb_black}`} id="introProcess">
+        <div className={`Page_container ${stylesIndex.Page_dec_mb_black}`}>
           <div className="block_90">
             <div className={`Txt_box ${stylesIndex.Txt_box_top}`}>
             <div className={stylesIndex.Txt_box_h5}>專案亮點</div>
@@ -88,7 +90,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className={`Page_container ${stylesIndex.Page_container_black}`}>
+        <div className={`Page_container ${stylesIndex.Page_container_black}`} id="introProcess">
           <div className="block_90">
             
             <GsapComponent variant="variant2"/>

@@ -13,10 +13,14 @@ const ProjectPage = () =>{
     useEffect(() => {
         if (router.asPath.includes("#")){
             const anchor = router.asPath.split("#")[1];
-            const el = document.getElementById(anchor);
-            if (el){
-                el.scrollIntoView({ behavior: "smooth"});
-            }
+            const scrollToAnchor = () => {
+                const el = document.getElementById(anchor);
+                if (el){
+                    el.scrollIntoView({ behavior: "smooth"});
+                }
+            };
+            setTimeout(scrollToAnchor, 1000);
+            
         }
     },[router.asPath]);
     return (
