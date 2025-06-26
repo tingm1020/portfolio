@@ -1,6 +1,4 @@
-import {React} from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import stylesIndex from "../src/assets/styles/Index.module.scss";
 import SwiperComponent from "../src/components/sub/swiper/swiperComponent";
 import MarqueeComponent from "../src/components/sub/marquee/marqueeComponent";
@@ -10,31 +8,32 @@ import LoadComponent from "../src/components/sub/load/loadComponent";
 import FooterComponent from "../src/components/Footer";
 import { motion } from "framer-motion";
 import HeaderComponent from "../src/components/Header";
+import { useEffect, useRef } from "react";
+
 
 
 const HomePage = () => {
-
   const router = useRouter();
+  const sectionRefs = useRef({});
 
   useEffect(() => {
-    if (router.asPath.includes("#")){
-      const anchor = router.asPath.split("#")[1];
-      const scrollToAnchor = () => {
-        const el = document.getElementById(anchor);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth"});
-        }
-      };
-      setTimeout(scrollToAnchor, 1000);
+    const section = router.query.section;
+    const el = sectionRefs.current[section];
+    if (section && el) {
+      const top = el.getBoundingClientRect().top + window.scrollY; // -80 是保留空間，可依需求調整
+      window.scrollTo({ top, behavior: 'smooth' });
     }
-  }, [router.asPath]);
+  }, [router.query.section]);
 
   return(
     <div>
       <div className={stylesIndex.wrapper}>
         <LoadComponent variant="variant1" />
-        <HeaderComponent variant="variant1" />
-        <div className="Kv_container" id="introProject">
+        <HeaderComponent variant="variant2" />
+        <div 
+          className="Kv_container"
+          ref={el => sectionRefs.current['introProject'] = el}
+        >
           <div className={`Kv_block Kv_block_center_1100 ${stylesIndex.Kv_spc}`}>
             <h2 className="Txt_h2">See. Explore.</h2>
             <p className="Txt_dec spcBlock_60">探索一系列透過功能性呈現議題內容的前端開發作品。</p>
@@ -53,7 +52,10 @@ const HomePage = () => {
             <SwiperComponent variant="variant1" />
           </div>
         </motion.div>
-        <div className={`Page_container ${stylesIndex.Page_container_black}`} id="introPlugin">
+        <div 
+          className={`Page_container ${stylesIndex.Page_container_black}`} 
+          ref={el => sectionRefs.current['introPlugin'] = el}
+        >
           <MarqueeComponent variant="variant2" />
           <div className="block_90">
             <div className={`Txt_box ${stylesIndex.Txt_box_left}`}>
@@ -90,7 +92,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className={`Page_container ${stylesIndex.Page_container_black}`} id="introProcess">
+        <div 
+          className={`Page_container ${stylesIndex.Page_container_black}`} 
+          ref={el => sectionRefs.current['introProcess'] = el}
+        >
           <div className="block_90">
             
             <GsapComponent variant="variant2"/>

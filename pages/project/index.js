@@ -1,6 +1,6 @@
 
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import ProjectList from "@/components/project/projectList";
 import HeaderComponent from "../../src/components/Header";
 import styleProject from "../../src/assets/styles/Project.module.scss"
@@ -9,20 +9,17 @@ import LoadComponent from "../../src/components/sub/load/loadComponent";
 
 const ProjectPage = () =>{
     const router = useRouter();
+    const sectionRefs = useRef({});
 
     useEffect(() => {
-        if (router.asPath.includes("#")){
-            const anchor = router.asPath.split("#")[1];
-            const scrollToAnchor = () => {
-                const el = document.getElementById(anchor);
-                if (el){
-                    el.scrollIntoView({ behavior: "smooth"});
-                }
-            };
-            setTimeout(scrollToAnchor, 1000);
-            
-        }
-    },[router.asPath]);
+    const section = router.query.section;
+    const el = sectionRefs.current[section];
+    if (section && el) {
+        const top = el.getBoundingClientRect().top + window.scrollY; // -80 是保留空間，可依需求調整
+        window.scrollTo({ top, behavior: 'smooth' });
+    }
+    }, [router.query.section]);
+
     return (
         <div>
             <div className={styleProject.wrapper}>
@@ -32,8 +29,22 @@ const ProjectPage = () =>{
                 <ProjectList />
                 {/* <FooterComponent variant="variant1" /> */}
             </div>
-            <div id="projectFeatured"></div>
-            <div id="projectOverview"></div>
+            <div 
+                className="Page_container"
+                ref={el => sectionRefs.current['projectFeatured'] = el}
+            >
+                <div className="block_90">
+                    <h4>projectFeatured</h4>
+                </div>
+            </div>
+            <div 
+                className="Page_container"
+                ref={el => sectionRefs.current['projectOverview'] = el}
+            >
+                <div className="block_90">
+                    <h4>projectOverview</h4>
+                </div>
+            </div>
         </div>
     )
 }

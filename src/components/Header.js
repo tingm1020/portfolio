@@ -136,28 +136,33 @@ const HeaderVariant1 = () => {
     )
 };
 const HeaderVariant2 = () =>{
+    
     const router = useRouter();
     const handleNavClick = (item) => {
-        if (item.link) {
-            router.push(item.link);
-        } else if (item.anchor) {
-            if(router.pathname === "/") {
-                const el = document.getElementById(item.anchor);
-                if (el) el.scrollIntoView({ behavior: "smooth"});
-            } else{
-                router.push(`/#${item.anchor}`);
+        if (item.page) {
+            router.push({
+                pathname: `/${item.page}`,
+                query: { section: item.id }, 
+            },
+            undefined,
+            { shallow: true }
+        );
+        } else if (item,id) {
+            const el = document.getElementById(item.id);
+            if (el){
+                el.scrollIntoView({ behavior: 'smooth', block: 'start'});
             }
         }
     };
     const [showSubmenu, setShowSubmenu] = useState(false);
     const hoverSectionIndex = [
-        { title: "近期專案介紹", content: "展示風格與實作邏輯", link: "/#introProject"},
-        { title: "專案拆解", content: "呈現開發流程與技術選擇", link: "/#introPlugin"},
-        { title: "深入歷程", content: "聚焦挑戰與解法脈絡", link: "/#introProcess"},
+        { id: "introProject", title: "近期專案介紹", content: "展示風格與實作邏輯", page: "/" },
+        { id: "introPlugin", title: "專案拆解", content: "呈現開發流程與技術選擇", page: "/" },
+        { id: "introProcess", title: "深入歷程", content: "聚焦挑戰與解法脈絡", page: "/" },
     ];
     const hoverSectionProject = [
-        { title: "精選案例", content: "近期完成的代表作品", link: "/project#projectFeatured"},
-        { title: "專案地圖", content: "快速搜尋與瀏覽歷年作品", link: "/project#projectOverview"},
+        { id: "projectFeatured", title: "精選案例", content: "近期完成的代表作品", page: "/project" },
+        { id: "projectOverview", title: "專案地圖", content: "快速搜尋與瀏覽歷年作品", page: "/project" },
     ];
 
 
@@ -227,7 +232,8 @@ const HeaderVariant2 = () =>{
                                 {hoverSectionIndex.map((item, index) => (
                                     <div 
                                         className={stylesHeader.menu_hoverCollectMenu_section_box} 
-                                        key={index}
+                                        key={item.id}
+                                        id={item.id}
                                         onClick={() => handleNavClick(item)}
                                     >
                                         <h4>
@@ -244,7 +250,12 @@ const HeaderVariant2 = () =>{
                         <div className={stylesHeader.menu_hoverCollectMenu_block}>
                             <div className={`${stylesHeader.menu_hoverCollectMenu_section} ${stylesHeader.menu_hoverCollectMenu_section_single100}`}>
                                 {hoverSectionProject.map((item, index) => (
-                                    <div className={stylesHeader.menu_hoverCollectMenu_section_box} key={index}>
+                                    <div 
+                                        className={stylesHeader.menu_hoverCollectMenu_section_box} 
+                                        key={item.id}
+                                        id={item.id}
+                                        onClick={() => handleNavClick(item)}
+                                    >
                                         <h4>
                                             {item.title}
                                             <span className={stylesHeader.menu_menuBtn_arrow}></span>
