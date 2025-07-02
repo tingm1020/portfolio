@@ -29,7 +29,7 @@ const HomePage = () => {
     <div>
       <div className={stylesIndex.wrapper}>
         <LoadComponent variant="variant1" />
-        <HeaderComponent variant="variant2" />
+        <HeaderComponent variant="variant1" />
         <div 
           className="KvContainer"
           ref={el => sectionRefs.current['introProject'] = el}
