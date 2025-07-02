@@ -35,7 +35,7 @@ $pageColor1: #f7f8f2;
 
 // body{
 // 	@include abs($t:0,$b:0,$r:0,$l:0);
-// 	min-height: 100%;
+// 	minHeight: 100%;
 // 	font:normal 12px/18px 'Zen Maru Gothic','Droid Sans',Arial,'Noto Sans TC','Microsoft JhengHei','微軟正黑體';
 // 	color: $allColor1;
 // 	background: $allColor1;
@@ -117,27 +117,27 @@ svg{
 =============================================*/
 .block{
 	@include comRel;
-	&_1100{
+	&W1100{
 		@extend .block;
 		max-width: 1100px;
 	}
-	&_1000{
+	&W1000{
 		@extend .block;
 		max-width: 1000px;
 	}
-	&_900{
+	&W900{
 		@extend .block;
 		max-width: 900px;
 	}
-	&_100{
+	&W100{
 		@extend .block;
 		max-width: 100%;
 	}
-	&_90{
+	&W90{
 		@extend .block;
 		max-width: 90%;
 	}
-	&_80{
+	&W80{
 		@extend .block;
 		max-width: 80%;
 	}
@@ -146,22 +146,22 @@ svg{
 	position: relative;
 	display: inline-block;
 	&Block{
-		&_20{
+		&W20{
 			@extend .spc;
 			width: 20%;
 		}
-		&_40{
+		&W40{
 			@extend .spc;
 			width: 40%;
 		}
-		&_60{
+		&W60{
 			@extend .spc;
 			width: 60%;
 		}
-		&_70{
+		&W70{
 			width: 70%;
 		}
-		&_80{
+		&W80{
 			@extend .spc;
 			width: 80%;
 		}
@@ -169,11 +169,11 @@ svg{
 	&Box{
 		position: relative;
 		display: inline-block;
-		&_40{
+		&W40{
 			@extend .spcBox;
 			width: 40%;
 		}
-		&_50{
+		&W50{
 			@extend .spcBox;
 			width: 50%;
 			img{
@@ -191,10 +191,10 @@ svg{
 	box-sizing: border-box;
 	color: $allColor1;
 	font-weight: 100;
-	&_box{
+	&Box{
 		color: #fff;
 	}
-	&_h2{
+	&H2{
 		@extend .Txt;
 		font-size: 6vw;
 		line-height: 1;
@@ -202,7 +202,7 @@ svg{
 		font-weight: 600;
 		font-family: 'Zen Maru Gothic','Noto Sans TC';
 	}
-	&_h3{
+	&H3{
 		@extend .Txt;
 		font-size: 3vw;
 		line-height: 1;
@@ -211,20 +211,20 @@ svg{
 			line-height: 1.2;
 		}
 	}
-	&_h4{
+	&H4{
 		@extend .Txt;
 		font-size: 2vw;
 		line-height: 1;
 		margin: 1rem auto;
 	}
-	&_h5{
+	&H5{
 		@extend .Txt;
 		display: block;
 		font-size: 1.2vw;
 		line-height: 1;
 		margin: 0;
 	}
-	&_dec{
+	&Dec{
 		@extend .Txt;
 		display: block;
 		margin: 0 auto;
@@ -233,7 +233,7 @@ svg{
 		letter-spacing: 1px;
 		font-weight: 300;
 	}
-	&_normal{
+	&Normal{
 		@extend .Txt;
 	}
 }
@@ -248,7 +248,7 @@ svg{
 		@include abs($w:100%,$h:1px,$t:50%,$l:0);
 		background: $allColor3;
 	}
-	&_center{
+	&Center{
 		@extend .Border;
 		padding: 3rem 0 1rem;
 	}
@@ -269,7 +269,7 @@ svg{
 		background: $allColor1;
 		transition: all .6s;
 	}
-	&_single{
+	&Single{
 		@extend .Btn;
 		padding: 15px 20px;
 		box-sizing: border-box;
@@ -277,29 +277,29 @@ svg{
 		min-width: 250px;
 		max-width: 250px;
 		height: 50px;
-		&_page{
-			@extend .Btn_single;
+		&Page{
+			@extend .BtnSingle;
 			font-size: 1vw;
 			display: inline-block;
 			margin: 1rem auto;
-			&_non{
+			&Non{
 				display: inline-block;
 			}
-			&_hover{
+			&Hover{
 				display: none;
 				overflow: hidden;
 				color: #fff;
 			}
 			&:hover{
-				.Btn_single_page_non{
+				.Btn-single-page-non{
 					display: none;
 				}
-				.Btn_single_page_hover{
+				.Btn-single-pageHover{
 					display: inline-block;
 				}
 			}
 		}
-		&_small{
+		&Small{
 			@extend .Btn;
 			font-size: 1vw;
 			margin: 0 auto;
@@ -316,11 +316,11 @@ svg{
 .icon{
 	position: relative;
 	display: inline-block;
-	&_left{
+	&Left{
 		@extend .icon;
 		text-align: left;
 	}
-	&_done{
+	&Done{
 		@extend .icon;
 		@include wh(15px,15px);
 		background: $allColor2;
@@ -340,14 +340,14 @@ svg{
 =                     kv                      =
 =============================================*/
 .Kv{
-	&_container{
+	&Container{
 		@include comRel;
 		height: 100vh;
 	}
-	&_block{
+	&Block{
 		@include comRel;
-		&_center{
-			&_1100{
+		&Center{
+			&W1100{
 				@include abs($t:50%,$l:50%);
 				max-width: 1100px;
 				transform: translate(-50%,-50%);
@@ -360,15 +360,14 @@ svg{
 =                    menu                     =
 =============================================*/
 .menu{
-	&_MB{
+	&Mb{
 		position: relative;
-		display: inline-block;
 		vertical-align: middle;
 		@include wh(35px,40px);
 		z-index: 10;
 		float: right;
 		display: none;
-		&_Btn{
+		&Btn{
 			@include abs($t:50%,$l:50%);
 			transform: translate(-50%,-50%);
 			box-sizing: border-box;
@@ -390,7 +389,7 @@ svg{
 			}
 		}
 		&.on{
-			.menu_MB_Btn{
+			.menuMbBtn{
 				i{
 					&:nth-child(1){
 						transform: rotate(45deg);
@@ -406,12 +405,12 @@ svg{
 				}
 			}
 		}
-		&_menuBtn{
+		&MenuBtn{
 			opacity: 0;
 			transform: translate3d(0px,30px,0);
 			transition: all .6s;
 		}
-		&_Wrap{
+		&Wrap{
 			@include abs($w:100%,$h:100vh,$t:0%,$l:0%);
 			z-index: 9;
 			background: rgba(0,0,0, .8);
@@ -420,7 +419,7 @@ svg{
 			visibility: hidden;
 			transition: all .6s;
 			&.on{
-				.menu_MB_menuBtn{
+				.menuMbMenuBtn{
 					opacity: 1;
 					transform: translate3d(0,0,0);
 					transition: all .6s;
@@ -447,9 +446,9 @@ svg{
 .on{
 	// display: block;
 	&.menu{
-		&_MB{
+		&Mb{
 			display: block;
-			&_Btn{
+			&Btn{
 				i{
 					&:nth-child(1){
 						transform: rotate(45deg);
@@ -464,7 +463,7 @@ svg{
 					}
 				}
 			}	
-			&_Wrap{
+			&Wrap{
 				opacity: 1;
 				visibility: visible;
 				transition: all .6s;
@@ -478,10 +477,10 @@ svg{
 =                    page                     =
 =============================================*/
 .Page{
-	&_container{
+	&Container{
 		@include comRel;
 		padding: 1rem 0 3rem;
-		min-height: 600px;
+		min-Height: 600px;
 	}
 }
 /*=============================================
@@ -490,7 +489,7 @@ svg{
 .List{
 	position: relative;
 	display: inline-block;
-	&_done{
+	&Done{
 		margin: 1rem auto;
 		li{
 			@extend .List;
@@ -519,11 +518,11 @@ svg{
 =                    list                     =
 =============================================*/
 .Img{
-	&_fit{
-		&13_9{
+	&Fit{
+		&13by9{
 			aspect-ratio: 13 / 9;
 		}
-		&9_13{
+		&9by13{
 			aspect-ratio: 9 / 13;
 		}
 	}
@@ -533,8 +532,8 @@ svg{
 =============================================*/
 // swiper cutsom
 .Swiper{
-	&_container{
-		.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-customVariant1-pagination{
+	&Container{
+		.swiperHorizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-customVariant1-pagination{
 			position: relative;
 			display: block;
 			width: auto;
@@ -550,18 +549,18 @@ svg{
 			}
 		}
 	}
-	&_single{
-		&_perbox{
+	&Single{
+		&Perbox{
 			.swiper-slide{
 				width: 25%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 			}
-			&_btnCombin{
+			&BtnCombin{
 				@include abs($w:100%,$h:100px,$b:-150px,$r:0);
 				transform: translate(0%,-50%);
-				&_80{
+				&W80{
 					@include comInline;
 					@include wh(80%,50px);
 					background: #000;
@@ -569,7 +568,7 @@ svg{
 					transform: translate3d(0,-26px,0);
 					z-index: 3;
 				}
-				&_20{
+				&W20{
 					@include comInline;
 					@include wh(20%,100px);
 					background: #141414;
@@ -579,15 +578,15 @@ svg{
 					box-sizing: border-box;
 					text-align: center;
 				}
-				.swiper_button{
-					&_icon{
+				.swiperButton{
+					&Icon{
 						@include abs($w:100%,$h:100%,$t:50%,$l:50%);
 						transform: translate(-50%,-50%);
 						transition: all .3s;
 					}
 				}
-				.swiper_button_prev2,
-				.swiper_button_next2{
+				.swiper-button-prev2,
+				.swiper-button-next2{
 					position: relative;
 					display: inline-block;
 					@include wh(3vw,3vw);
@@ -603,31 +602,31 @@ svg{
 					}
 				}
 				
-				.swiper_button_prev2{
+				.swiper-button-prev2{
 					background: linear-gradient(212deg, $allColor1 0%, $allColor1);
 					transition: all .6s;
 					background-size: 100% 100%;
-					&_icon{
-						@extend .swiper_button_icon;
-						background: url(../../../public/images/arrow_left.svg) 50% 50% no-repeat;
+					&Icon{
+						@extend .swiperButtonIcon;
+						background: url(../../../public/images/arrow-left.svg) 50% 50% no-repeat;
 						background-size: auto 40%;
 					}
 					&:hover{
 						background-image: linear-gradient(300deg, $allColor2 0%, $allColor1);
 						background-size: 500% 500%;
 						transition: all .3s;
-						.swiper_button_prev2_icon{
+						.swiper-button-prev2-icon{
 							transform: translate(-50%,-50%) translate3d(-2px,0px,0);
 						}
 					}
 				}
-				.swiper_button_next2{
+				.swiper-button-next2{
 					background: linear-gradient(212deg, $allColor1 0%, $allColor1);
 					transition: all .6s;
 					background-size: 100% 100%;
-					&_icon{
-						@extend .swiper_button_icon;
-						background: url(../../../public/images/arrow_right.svg) 50% 50% no-repeat;
+					&Icon{
+						@extend .swiperButtonIcon;
+						background: url(../../../public/images/arrow-right.svg) 50% 50% no-repeat;
 						background-size: auto 40%;
 					}
 					&:hover{
@@ -635,7 +634,7 @@ svg{
 						background-size: 300% 100%;
 						background-position: 100% 0;
 						transition: all .3s;
-						.swiper_button_next2_icon{
+						.swiper-button-next2-icon{
 							transform: translate(-50%,-50%) translate3d(2px,0px,0);
 						}
 					}
@@ -646,7 +645,7 @@ svg{
 		}
 	}
 }
-.Marquee_container{
+.MarqueeContainer{
 	display: flex;
 	img{
 		// max-width: 80px;
@@ -658,12 +657,12 @@ svg{
 }
 
 //scroll
-.js-cont{
+.jsCont{
 	position: relative;
 	@include wh(100%,100%);
 	display: block;
 }
-.js-scroll{
+.jsScroll{
 	@include fix($w:100%,$t:0,$l:0);
 	z-index: 10;
 	overflow: hidden;
@@ -675,19 +674,19 @@ svg{
 =============================================*/
 @include rwd(max,1200){
 	.Kv{
-		&_block{
-			&_center{
-				&_1100{
+		&Block{
+			&Center{
+				&W1100{
 					max-width: 85%;
 				}
 			}
 		}
 	}
 	.Btn{
-		&_single{
+		&Single{
 			font-size: 16px;
 			transition: all .6s;
-			&_small{
+			&Small{
 				font-size: 1.1vw;
 				width: 100%;
 				text-align: center;
@@ -697,25 +696,25 @@ svg{
 	}
 	.spc{
 		&Box{
-			&_40{
+			&W40{
 				width: 100%;
 			}
 		}
 	}
 	.Txt{
-		&_h2{
+		&H2{
 			font-size: 5vw;
 		}
-		&_h5{
+		&H5{
 			font-size: 1.5vw;
 		}
-		&_dec{
+		&Dec{
 			font-size: 2vw;
 			transition: all .6s;
 		}
 	}
 	.List{
-		&_done{
+		&Done{
 			li{
 				p{
 					font-size: 1.5vw;
@@ -726,7 +725,7 @@ svg{
 			}
 		}
 	}
-	.Marquee_container{
+	.MarqueeContainer{
 		img{
 			@include wh(40px,40px);
 			margin: 2rem;
@@ -734,13 +733,13 @@ svg{
 		}
 	}
 	.Swiper{
-		&_single{
-			&_perbox{
-				&_btnCombin{
-					&_20{
+		&Single{
+			&Perbox{
+				&BtnCombin{
+					&W20{
 						padding: 1rem;
 					}
-					.swiper_button_next2,.swiper_button_prev2{
+					.swiper-button-next2,.swiper-button-prev2{
 						@include wh(25px,25px);
 						margin: 0 .3rem;
 					}
@@ -755,32 +754,32 @@ svg{
 }
 @include rwd(max,1024){
 	.Txt{
-		&_h2{
+		&H2{
 			font-size: 60px;
 		}
-		&_h3{
+		&H3{
 			font-size: 28px;
 		}
-		&_h5{
+		&H5{
 			font-size: 16px;
 		}
-		&_dec{
+		&Dec{
 			font-size: 16px;
 		}
 	}
 	.Btn{
-		&_single{
+		&Single{
 			font-size: 20px;
 			height: auto;
 		}
 	}
 	.Border{
-		&_center{
+		&Center{
 			padding: 1.5rem 0;
 		}
 	}
 	.List{
-		&_done{
+		&Done{
 			li{
 				p{
 					font-size: 14px;
@@ -792,57 +791,57 @@ svg{
 @include rwd(max,768){
 	
 	.Txt{
-		&_dec{
+		&Dec{
 			font-size: 16px;
 		}
-		&_h2{
+		&H2{
 			font-size: 36px;
 		}
 	}
 	.menu{
-		&_MB{
+		&Mb{
 			display: block;
-			&_Btn{
+			&Btn{
 				display: inline-block;
 			}
 		}
 	}
 	.Btn{
-		&_single{
-			&_small{
+		&Single{
+			&Small{
 				font-size: 16px;
 			}
 		}
 	}
 	.Border{
-		&_center{
+		&Center{
 			padding: 0;
 			margin: 1rem auto 3rem;
 		}	
 	}
 	.spc{
 		&Block{
-			&_60{
+			&W60{
 				width: 100%;
 			}
-			&_40{
+			&W40{
 				width: 100%;
 				margin: 1rem auto .5rem;
 			}
 		}
 	}
 	.Swiper{
-		&_single{
-			&_perbox{
+		&Single{
+			&Perbox{
 				.swiper-slide{
 					width: 60%;
 				}
-				&_btnCombin{
-                    &_80{
+				&BtnCombin{
+                    &W80{
                         width: 60%;
 						transform: translate3d(0,0,0);
                     }
-                    &_20{
+                    &W20{
 						padding: 0 1rem 1rem;
                         @include wh(40%,auto);
                     }
@@ -851,7 +850,7 @@ svg{
 		}
 	}
 	.List{
-		&_done{
+		&Done{
 			margin: 0 auto;
 			li{
 				width: 100%;
@@ -869,7 +868,7 @@ svg{
 		}
 	}
 	.icon{
-		&_done{
+		&Done{
 			@include wh(20px,20px);
 			&:before{
 				@include wh(3px,7px);
@@ -878,11 +877,11 @@ svg{
 	}
 	.on{
 		.menu{
-			&_Mb{
-				&_Btn{
+			&Bb{
+				&Btn{
 					display: inline-block;
 				}
-				&_Wrap{
+				&Wrap{
 					opacity: 1;
 					visibility: visible;
 				}

@@ -34,7 +34,7 @@ $pageColor1: #f7f8f2;
 =                Load module                =
 =============================================*/
 .Load{
-    &_container{
+    &Container{
         @include fix($w:100%,$h:100%,$t:50%,$l:50%);
         transform: translate(-50%,-50%);
         background: rgba(0,0,0, .6);
@@ -44,16 +44,16 @@ $pageColor1: #f7f8f2;
         transition: all .6s;
         animation: fadeOut 2s forwards;
     }
-    &_block{
+    &Block{
         @include abs($t:50%,$l:50%);
         transform: translate(-50%,-50%) scale(.9);
     }
-    &_singlebox{
-        &_style1{
+    &Singlebox{
+        &Style1{
             position: relative;
             @include wh(120px,120px);
             z-index: 2;
-            &_ball{
+            &Ball{
                 @include abs($w:40px,$h:20px);
                 background: #fff;
                 clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -93,7 +93,7 @@ $pageColor1: #f7f8f2;
                     transform: translateY(-50%);
                 }
             }
-            &_txt{
+            &Txt{
                 @include abs($w:180px,$h:180px,$t:-25%,$l:-25%);
                 transform: translate(50%,50%);
                 animation: rotateText 8s ease-in-out infinite;

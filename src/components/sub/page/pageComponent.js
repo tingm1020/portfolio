@@ -91,18 +91,18 @@ const PageComponent = ({ variant }) => {
     
     const PageVariant1 = () => {
         return (
-            <div className={stylesPage.Page_sticky}>
-                <div className={stylesPage.Page_sticky_wrapper}>
-                    <div className={stylesPage.Page_sticky_content}>
-                        <div className={stylesPage.Page_sticky_section}>
-                            <div className={stylesPage.Page_sticky_wrapBox}>
-                                <div className={`${stylesPage.Page_sticky_wrap_50} ${stylesPage.Page_sticky_wrap_style1_left}`}>
-                                    <div className={stylesPage.Txt_box}>
-                                        <div className={`Txt_h3 ${stylesPage.Page_sticky_txt_h3}`}>Web & App</div>
-                                        <div className="Txt_dec">Fully branded ordering with innovative guest engagement features to grow loyalty and increase sales.</div>
-                                        <button className="Btn_single_page">
-                                            <span className="Btn_single_page_non">Learn more about ordering</span>
-                                            <span className="Btn_single_page_hover">
+            <div className={stylesPage.PageSticky}>
+                <div className={stylesPage.PageStickyWrapper}>
+                    <div className={stylesPage.PageStickyContent}>
+                        <div className={stylesPage.PageStickySection}>
+                            <div className={stylesPage.PageStickyWrapBox}>
+                                <div className={`${stylesPage.PageStickyWrapW50} ${stylesPage.PageStickyWrapStyle1Left}`}>
+                                    <div className={stylesPage.TxtBox}>
+                                        <div className={`TxtH3 ${stylesPage.PageStickyTxtH3}`}>Web & App</div>
+                                        <div className="TxtDec">Fully branded ordering with innovative guest engagement features to grow loyalty and increase sales.</div>
+                                        <button className="BtnSinglePage">
+                                            <span className="BtnSinglePageNon">Learn more about ordering</span>
+                                            <span className="BtnSinglePageHover">
                                                 <MarqueeComponent variant="variant1" />
                                             </span>
                                         </button>
@@ -117,7 +117,7 @@ const PageComponent = ({ variant }) => {
                                         />
                                     </div>
                                 </div>
-                                <div className={`${stylesPage.Page_sticky_wrap_50} ${stylesPage.Page_sticky_wrap_style2_right}`}>
+                                <div className={`${stylesPage.PageStickyWrapW50} ${stylesPage.PageStickyWrapStyle2Right}`}>
                                     <Image 
                                         src={selectedImage1} 
                                         alt="Selected" 
@@ -129,9 +129,9 @@ const PageComponent = ({ variant }) => {
                             </div>
                             <div className="clear"></div>
                         </div>
-                        <div className={`${stylesPage.Page_sticky_section} ${stylesPage.Page_sticky_section_even}`}>
-                            <div className={stylesPage.Page_sticky_wrapBox}>
-                                <div className={`${stylesPage.Page_sticky_wrap_50} ${stylesPage.Page_sticky_wrap_style2_left}`}>
+                        <div className={`${stylesPage.PageStickySection} ${stylesPage.PageStickySectionEven}`}>
+                            <div className={stylesPage.PageStickyWrapBox}>
+                                <div className={`${stylesPage.PageStickyWrapW50} ${stylesPage.PageStickyWrapStyle2Left}`}>
                                 <Image 
                                     src={selectedImage2} 
                                     alt="Selected" 
@@ -140,13 +140,13 @@ const PageComponent = ({ variant }) => {
                                     height={1600}
                                 />
                                 </div>
-                                <div className={`${stylesPage.Page_sticky_wrap_50} ${stylesPage.Page_sticky_wrap_style1_right}`}>
-                                    <div className={stylesPage.Txt_box}>
-                                        <div className="Txt_h3">Web & App</div>
-                                        <div className="Txt_dec">Fully branded ordering with innovative guest engagement features to grow loyalty and increase sales.</div>
-                                        <button className="Btn_single_page">
-                                            <span className="Btn_single_page_non">Learn more about ordering</span>
-                                            <span className="Btn_single_page_hover">
+                                <div className={`${stylesPage.PageStickyWrapW50} ${stylesPage.PageStickyWrapStyle1Right}`}>
+                                    <div className={stylesPage.TxtBox}>
+                                        <div className="TxtH3">Web & App</div>
+                                        <div className="TxtDec">Fully branded ordering with innovative guest engagement features to grow loyalty and increase sales.</div>
+                                        <button className="BtnSinglePage">
+                                            <span className="BtnSinglePageNon">Learn more about ordering</span>
+                                            <span className="BtnSinglePageHover">
                                                 <MarqueeComponent variant="variant1" />
                                             </span>
                                         </button>
@@ -164,15 +164,15 @@ const PageComponent = ({ variant }) => {
                             </div>
                             <div className="clear"></div>
                         </div>
-                        <div className={stylesPage.Page_sticky_section}>  
-                            <div className={stylesPage.Page_sticky_wrapBox}>
-                                <div className={`${stylesPage.Page_sticky_wrap_50} ${stylesPage.Page_sticky_wrap_style1_left}`}>
-                                    <div className={stylesPage.Txt_box}>
-                                        <div className={`Txt_h3 ${stylesPage.Page_sticky_txt_h3}`}>Latest News</div>
-                                        <div className="Txt_dec">Fully branded ordering with innovative guest engagement features to grow loyalty and increase sales.</div>
-                                        <button className="Btn_single_page">
-                                            <span className="Btn_single_page_non">Learn more about ordering</span>
-                                            <span className="Btn_single_page_hover">
+                        <div className={stylesPage.PageStickySection}>  
+                            <div className={stylesPage.PageStickyWrapBox}>
+                                <div className={`${stylesPage.PageStickyWrapW50} ${stylesPage.PageStickyWrapStyle1Left}`}>
+                                    <div className={stylesPage.TxtBox}>
+                                        <div className={`TxtH3 ${stylesPage.PageStickyTxtH3}`}>Latest News</div>
+                                        <div className="TxtDec">Fully branded ordering with innovative guest engagement features to grow loyalty and increase sales.</div>
+                                        <button className="BtnSinglePage">
+                                            <span className="BtnSinglePageNon">Learn more about ordering</span>
+                                            <span className="BtnSinglePageHover">
                                                 <MarqueeComponent variant="variant1" />
                                             </span>
                                         </button>
@@ -187,7 +187,7 @@ const PageComponent = ({ variant }) => {
                                         />
                                     </div>
                                 </div>
-                                <div className={`${stylesPage.Page_sticky_wrap_50} ${stylesPage.Page_sticky_wrap_style2_right}`}>
+                                <div className={`${stylesPage.PageStickyWrapW50} ${stylesPage.PageStickyWrapStyle2Right}`}>
                                     <Image 
                                         src={selectedImage3} 
                                         alt="Selected" 
@@ -210,14 +210,14 @@ const PageComponent = ({ variant }) => {
         switch (variant) {
             case "variant1":
                 return (
-                    <div className={stylesPage.Page_sticky}></div>
+                    <div className={stylesPage.PageSticky}></div>
                 );
             default:
                 return <PageVariant1 />;
         }
     };
     return (
-        <div className="Page_content">
+        <div className="PageContent">
             {renderVariant()}
         </div>
     );

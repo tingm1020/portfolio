@@ -3,37 +3,37 @@ import stylesFooter from '../assets/styles/Footer.module.scss';
 
 const FooterVariant1 = () => {
     return (
-        <div className={stylesFooter.Footer_perbox}>
-            <div className="block_90">
-                <div className={stylesFooter.menu_posTop}>
-                    <div className={stylesFooter.menu_spc_20}>
-                        <div className={stylesFooter.menu_url_title}>
-                            <div className={stylesFooter.menu_url_main}>MENU</div>
+        <div className={stylesFooter.FooterPerbox}>
+            <div className="blockW90">
+                <div className={stylesFooter.menuPosTop}>
+                    <div className={stylesFooter.menuSpcW20}>
+                        <div className={stylesFooter.menuUrlTitle}>
+                            <div className={stylesFooter.menuUrlMain}>MENU</div>
                         </div>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_btn}>Project</a>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_btn}>Github</a>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_btn}>Highlights</a>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkBtn}>Project</a>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkBtn}>Github</a>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkBtn}>Highlights</a>
                     </div>
-                    <div className={stylesFooter.menu_spc_20}>
-                        <div className={stylesFooter.menu_url_title}>
-                        <div className={stylesFooter.menu_url_main}></div>
+                    <div className={stylesFooter.menuSpcW20}>
+                        <div className={stylesFooter.menuUrlTitle}>
+                        <div className={stylesFooter.menuUrlMain}></div>
                         </div>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_btn}>UI Kit</a>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_btn}>Experiments</a>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkBtn}>UI Kit</a>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkBtn}>Experiments</a>
                     </div>
-                    <div className={stylesFooter.menu_spc_50}>
-                        <div className={stylesFooter.menu_url_title}>
-                            <div className={stylesFooter.menu_url_main}>LATEST ARTICLES</div>
+                    <div className={stylesFooter.menuSpcW50}>
+                        <div className={stylesFooter.menuUrlTitle}>
+                            <div className={stylesFooter.menuUrlMain}>LATEST ARTICLES</div>
                         </div>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_event}>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkEvent}>
                             <p>Menu選單大集合！結合視覺元素的延伸創作</p>
                             <span>UI Kit</span>
                         </a>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_event}>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkEvent}>
                             <p>主視覺進場動畫的構思：結合loading的svg及animate</p>
                             <span>Animation</span>
                         </a>
-                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menu_link_more}>
+                        <a href="https://github.com/tingm1020?tab=projects" target="_blank" className={stylesFooter.menuLinkMore}>
                             <p>More Articles</p>
                             <span></span>
                         </a>
@@ -54,7 +54,7 @@ const FooterComponent = ({ variant }) => {
         }
     };
     return (
-        <div className={stylesFooter.Footer_container}>
+        <div className={stylesFooter.FooterContainer}>
             {renderVariant()}
         </div>
     );

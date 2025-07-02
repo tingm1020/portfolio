@@ -34,39 +34,39 @@ $pageColor1: #f7f8f2;
 =                Footer module                =
 =============================================*/
 .Footer{
-	&_container{
+	&Container{
 		@extend .comRel;
 		background: $allColor1;
 		font-family: 'Noto Sans TC';
 	}
-	&_perbox{
+	&Perbox{
 		padding: 5% 0 10%;
 		box-sizing: border-box;
 	}
 }
 .menu{
-	&_pos{
+	&Pos{
 		&Top{
 			@extend .comRel;
 			display: inline-block;
 		}
 	}
-	&_spc{
+	&Spc{
 		position: relative;
 		display: inline-block;
 		vertical-align: top;
-		&_20{
-			@extend .menu_spc;
+		&W20{
+			@extend .menuSpc;
 			width: 20%;
 			margin: 0 5% 0 0;
 		}
-		&_50{
-			@extend .menu_spc;
+		&W50{
+			@extend .menuSpc;
 			width: 50%;
 		}
 	}
-	&_link{
-		&_btn{
+	&Link{
+		&Btn{
 			position: relative;
 			display: block;
 			width: 100%;
@@ -78,27 +78,27 @@ $pageColor1: #f7f8f2;
 			margin: 5% auto ;
 			font-family: 'Zen Maru Gothic';
 		}
-		&_event{
+		&Event{
 			position: relative;
 			display: block;
 			line-height: 1.2;
 			margin-bottom: 5%;
 			p{
-				@extend .menu_link_event;
+				@extend .menuLinkEvent;
 				width: 80%;
 				font-size: 1.2vw;
 				color: #fff;
 				margin: 3.5% 0 1%;
 			}
 			span{
-				@extend .menu_link_event;
+				@extend .menuLinkEvent;
 				font-size: 1vw;
 				color: $allColor4;
 			}
 		}
 	}
-	&_url{
-		&_title{
+	&Url{
+		&Title{
 			position: relative;
 			display: block;
 			width: 100%;
@@ -117,8 +117,8 @@ $pageColor1: #f7f8f2;
 =============================================*/
 @include rwd(max,1100){
 	.menu{
-		&_link{
-			&_event{
+		&Link{
+			&Event{
 				p{
 					font-size: 1.5vw;
 				}
@@ -128,21 +128,21 @@ $pageColor1: #f7f8f2;
 }
 @include rwd(max,768){
 	.menu{
-		&_spc{
-			&_20{
+		&Spc{
+			&W20{
 				width: 50%;
 				margin: 0;
 			}
-			&_50{
+			&W50{
 				width: 100%;
 				margin: 1rem auto;
 			}
 		}
-		&_link{
-			&_btn{
+		&Link{
+			&Btn{
 				font-size: 18px;
 			}
-			&_event{
+			&Event{
 				width: 100%;
 				p{
 					font-size: 14px;
@@ -155,8 +155,8 @@ $pageColor1: #f7f8f2;
 			}
 
 		}
-		&_url{
-			&_title{
+		&Url{
+			&Title{
 				font-size: 14px;
 				min-height: 30px;
 			}

@@ -35,17 +35,17 @@ $pageColor1: #f7f8f2;
 =============================================*/
 
 .Page{
-    &_sticky{
+    &Sticky{
         @extend .comRel;
         overflow: hidden;
-        &_wrapper{
+        &Wrapper{
             display: flex;
             justify-content: center;
             @include wh(100%,100%);
             padding: 20px 0; 
             height: 100vh;
         }
-        &_content{
+        &Content{
             position: relative;
             width: 100%;
             overflow-y: auto;
@@ -55,7 +55,7 @@ $pageColor1: #f7f8f2;
                 display: none;
             }
         }
-        &_section{
+        &Section{
             position: sticky;
             top: 0px;
             padding: 0px;
@@ -81,36 +81,8 @@ $pageColor1: #f7f8f2;
                 
             }
         }
-        
-        // &_section{
-        //     align-items: center;
-        //     display: flex;
-        //     flex: none;
-        //     flex-direction: column;
-        //     flex-wrap: nowrap;
-        //     gap: 10px;
-        //     height: min-content;
-        //     justify-content: start;
-        //     min-height: 100vh;
-        //     overflow: hidden;
-        //     padding: 128px 120px 256px;
-        //     position: sticky;
-        //     top: 1px;
-        //     width: 100%;
-        //     will-change: transform;
-        //     z-index: 3;
-        //     &:nth-child(2){
-        //         z-index: 4;
-        //         gap: 56px;
-        //     }
-        //     &:nth-child(3){
-        //         gap: 78px;
-        //         z-index: 5;
-        //     }
-        // }
 
-
-        &_wrap{
+        &Wrap{
             position: relative;
             display: inline-block;
             float: left;
@@ -120,7 +92,7 @@ $pageColor1: #f7f8f2;
                 @extend .Page_sticky_wrap;
                 width: 100%;  
             }
-            &_50{
+            &W50{
                 @extend .Page_sticky_wrap;
                 @include wh(calc(50% - 2px),600px);
                 border: 1px solid #000;
@@ -133,25 +105,25 @@ $pageColor1: #f7f8f2;
                     animation: fadeIn 3s ease-in-out;
                 }
             }
-            &_style1{
-                &_left{
+            &Style1{
+                &Left{
                     background: #fff;
                     border-top-left-radius: 50px;
                     border-bottom-left-radius: 50px;
                 }
-                &_right{
+                &Right{
                     background: #fff;
                     border-top-right-radius: 50px;
                     border-bottom-right-radius: 50px;
                 }
             }
-            &_style2{
-                &_left{
+            &Style2{
+                &Left{
                     background: #000;
                     border-top-left-radius: 50px;
                     border-bottom-left-radius: 50px;
                 }
-                &_right{
+                &Right{
                     background: #000;
                     border-top-right-radius: 50px;
                     border-bottom-right-radius: 50px;
@@ -159,8 +131,8 @@ $pageColor1: #f7f8f2;
                 }
             }
         }
-        &_txt{
-            &_h3{
+        &Txt{
+            &H3{
                 font-weight: 800;
             }
         }
@@ -169,7 +141,7 @@ $pageColor1: #f7f8f2;
 .Txt{
     position: relative;
     display: inline-block;
-    &_box{
+    &Box{
         @extend .Txt;
         padding: 7rem 8rem 7rem 7rem;
         box-sizing: border-box;
@@ -193,8 +165,8 @@ $pageColor1: #f7f8f2;
 =                 Radio module                =
 =============================================*/
 .Radio{
-    &_style1{
-        &_label{
+    &Style1{
+        &Label{
             position: relative;
             display: inline-block;
             overflow: hidden;

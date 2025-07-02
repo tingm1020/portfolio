@@ -74,13 +74,13 @@ const GsapVariant2 = () =>{
   const mm = gsap.matchMedia();
 
   useEffect(() => {
-    gsap.set(`.${stylesGsap.Gsap_chat_top}`,{ yPercent: 0});
-    gsap.set(`.${stylesGsap.Gsap_chat_bottom}`,{yPercent: 30});
+    gsap.set(`.${stylesGsap.GsapChatTop}`,{ yPercent: 0});
+    gsap.set(`.${stylesGsap.GsapChatBottom}`,{yPercent: 30});
 
     mm.add("(max-width: 1600px)", () => {
-      gsap.set(`.${stylesGsap.Gsap_chat_top}`,{ yPercent: 100});
-      gsap.set(`.${stylesGsap.Gsap_chat_bottom}`,{yPercent: 70});
-      gsap.to(`.${stylesGsap.Gsap_chat_block_top}`,{
+      gsap.set(`.${stylesGsap.GsapChatTop}`,{ yPercent: 100});
+      gsap.set(`.${stylesGsap.GsapChatBottom}`,{yPercent: 70});
+      gsap.to(`.${stylesGsap.GsapChatBlockTop}`,{
         yPercent: -50,
         ease: "none",
         scrollTrigger: {
@@ -89,7 +89,7 @@ const GsapVariant2 = () =>{
         },
       });
   
-      gsap.to(`.${stylesGsap.Gsap_chat_block_bottom}`,{
+      gsap.to(`.${stylesGsap.GsapChatBlockBottom}`,{
         yPercent: 0,
         ease: "none",
         scrollTrigger: {
@@ -99,9 +99,9 @@ const GsapVariant2 = () =>{
       });
     });
     mm.add("(max-width: 414px)", () => {
-      gsap.set(`.${stylesGsap.Gsap_chat_top}`,{ yPercent: 120});
-      gsap.set(`.${stylesGsap.Gsap_chat_bottom}`,{yPercent: 100});
-      gsap.to(`.${stylesGsap.Gsap_chat_block_top}`,{
+      gsap.set(`.${stylesGsap.GsapChatTop}`,{ yPercent: 120});
+      gsap.set(`.${stylesGsap.GsapChatBottom}`,{yPercent: 100});
+      gsap.to(`.${stylesGsap.GsapChatBlockTop}`,{
         yPercent: -50,
         ease: "none",
         scrollTrigger: {
@@ -110,7 +110,7 @@ const GsapVariant2 = () =>{
         },
       });
   
-      gsap.to(`.${stylesGsap.Gsap_chat_block_bottom}`,{
+      gsap.to(`.${stylesGsap.GsapChatBlockBottom}`,{
         yPercent: 0,
         ease: "none",
         scrollTrigger: {
@@ -119,7 +119,7 @@ const GsapVariant2 = () =>{
         },
       });
     });
-    gsap.to(`.${stylesGsap.Gsap_chat_block_top}`,{
+    gsap.to(`.${stylesGsap.GsapChatBlockTop}`,{
       yPercent: -90,
       ease: "none",
       scrollTrigger: {
@@ -128,7 +128,7 @@ const GsapVariant2 = () =>{
       },
     });
 
-    gsap.to(`.${stylesGsap.Gsap_chat_block_bottom}`,{
+    gsap.to(`.${stylesGsap.GsapChatBlockBottom}`,{
       yPercent: -70,
       ease: "none",
       scrollTrigger: {
@@ -142,14 +142,14 @@ const GsapVariant2 = () =>{
     };
   },[]);
   return(
-    <div className={stylesGsap.Gsap_single_perbox} ref={chatRef}>
-      <div className={stylesGsap.Gsap_block}>
-        <div className={`spcBlock_20 ${stylesGsap.Gsap_single_perblock_left}`}>
-          <div className={stylesGsap.Gsap_txtBox_tag}>專案亮點</div>
-          <h3 className={`Txt_h3 ${stylesGsap.Gsap_Txt_h3}`}><p>靈感實作</p><p>影響延續</p></h3>
-          <div className={stylesGsap.Gsap_txtBox_dec}>探索我的實作歷程 —— 如何解決問題、推動創新、創造成果</div>
+    <div className={stylesGsap.GsapSinglePerbox} ref={chatRef}>
+      <div className={stylesGsap.GsapBlock}>
+        <div className={`spcBlockW20 ${stylesGsap.GsapSinglePerblockLeft}`}>
+          <div className={stylesGsap.GsapTxtBoxTag}>專案亮點</div>
+          <h3 className={`TxtH3 ${stylesGsap.GsapTxtH3}`}><p>靈感實作</p><p>影響延續</p></h3>
+          <div className={stylesGsap.GsapTxtBoxDec}>探索我的實作歷程 —— 如何解決問題、推動創新、創造成果</div>
         </div>
-        <div className={`spcBlock_60 ${stylesGsap.Gsap_single_perblock_right}`}>
+        <div className={`spcBlockW60 ${stylesGsap.GsapSinglePerblockRight}`}>
           {[
             [
               { text: "", role: {}},
@@ -175,16 +175,16 @@ const GsapVariant2 = () =>{
               { text: "", role: {}}
             ]
           ].map((chatGroup, index) => (
-            <div key={index} className={`${stylesGsap.Gsap_chat_block} ${index === 0 ? stylesGsap.Gsap_chat_top : stylesGsap.Gsap_chat_bottom}`}>
+            <div key={index} className={`${stylesGsap.GsapChatBlock} ${index === 0 ? stylesGsap.GsapChatTop : stylesGsap.GsapChatBottom}`}>
               {chatGroup.map((chat, idx) => (
-                <div key={idx} className={`${stylesGsap.Gsap_chat_box} ${chat.text && stylesGsap.Gsap_chat_box_main}`}>
+                <div key={idx} className={`${stylesGsap.GsapChatBox} ${chat.text && stylesGsap.GsapChatBoxMain}`}>
                   {chat.text && (
-                    <div className={stylesGsap.Gsap_chat_dec}>
+                    <div className={stylesGsap.GsapChatDec}>
                       {chat.text}
                       {chat.role.description && (
-                        <div className={stylesGsap.Gsap_chat_role}>
-                          <div className={stylesGsap.Gsap_chat_role_img} style={{ backgroundImage: `url(${chat.role.img})`}}></div>
-                          <div className={stylesGsap.Gsap_chat_role_dec}>{chat.role.description}</div>
+                        <div className={stylesGsap.GsapChatRole}>
+                          <div className={stylesGsap.GsapChatRoleImg} style={{ backgroundImage: `url(${chat.role.img})`}}></div>
+                          <div className={stylesGsap.GsapChatRoleDec}>{chat.role.description}</div>
                         </div>
                       )}
                     </div>
@@ -210,7 +210,7 @@ const GsapComponent = ({ variant }) => {
     }
   };
   return(
-    <div className={stylesGsap.Gsap_container}>
+    <div className={stylesGsap.GsapContainer}>
       {renderVariant()}
     </div>
   );

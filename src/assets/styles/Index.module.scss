@@ -28,7 +28,7 @@ $pageColor1: #f7f8f2;
 .comFix{
     @include fix($w:100%,$h:auto,$t:0,$l:0);
     margin: 0 auto;
-    &_center{
+    &Center{
         @extend .comFix;
         top: 50%;
         left: 50%;
@@ -49,23 +49,24 @@ $pageColor1: #f7f8f2;
     transition: all .6s;
 }
 .Kv{
-    &_spc{
+    &Spc{
         top: calc(50% + 40px);
+        min-height: 300px;
     }
 }
 .Page{
-    &_container{
-        &_black{
+    &Container{
+        &Black{
             background: #000;
         }
-        &_box{
+        &Box{
             @extend .comRel;
             border-radius: 30px;
         }
     }
-    &_dec{
-        &_mb{
-            &_black{
+    &Dec{
+        &Mb{
+            &Black{
                 min-height: 300px;
                 background: #000;
                 display: none;
@@ -74,29 +75,29 @@ $pageColor1: #f7f8f2;
     }
 }
 .Txt{
-    &_box{
-        &_top{
+    &Box{
+        &Top{
             position: relative;
             display: none;
             text-align: left;
             width: 75%;
             margin: 6rem auto 3rem;
         }
-        &_left{
+        &Left{
             position: relative;
             display: inline-block;
             text-align: left;
             width: 75%;
             margin: 6rem auto 3rem;
         }
-        &_h2{
+        &H2{
             color: #fff;
             font-size: 3vw;
             font-weight: 300;
             line-height: 1.4;
             font-family: "Noto Sans TC";
         }
-        &_h5{
+        &H5{
             position: relative;
             color: $allColor7;
             font-weight: 200;
@@ -115,7 +116,7 @@ $pageColor1: #f7f8f2;
                 background: $allColor7;
             }
         }
-        &_tag{
+        &Tag{
             position: relative;
             display: block;
             font-size: 1vw;
@@ -141,19 +142,19 @@ $pageColor1: #f7f8f2;
 =============================================*/
 @include rwd(max,1024){
     .Txt{
-        &_box{
-            &_left{
+        &Box{
+            &Left{
                 width: 100%;
                 margin: 1rem auto 3rem;
             }
-            &_h3{
+            &H3{
                 font-size: 36px;
                 color: #fff;
                 font-weight: 300;
                 line-height: 1.4;
                 font-family: "Noto Sans TC";
             }
-             &_h5{
+            &H5{
                 font-size: 16px;
             }
         }
@@ -161,27 +162,27 @@ $pageColor1: #f7f8f2;
 }
 @include rwd(max,750){
     .Page{
-        &_dec{
-            &_mb{
-                &_black{
+        &Dec{
+            &Mb{
+                &Black{
                     display: block;
                 }
             }
         }
     }
     .Txt{
-        &_box{
-            &_top{
+        &Box{
+            &Top{
                 display: block;
                 width: 100%;
             }
-            &_h2{
+            &H2{
                 font-size: 36px;
             }
-            &_h5{
+            &H5{
                 font-size: 16px;
             }
-            &_dec{
+            &Dec{
                 font-size: 16px;
                 font-weight: 200;
                 line-height: 1.5;

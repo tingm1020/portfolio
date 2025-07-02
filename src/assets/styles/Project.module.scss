@@ -49,3 +49,9 @@ $pageColor1: #f7f8f2;
     background: $pageColor1;
     transition: all .6s;
 }
+.Kv{
+    &_spc{
+        top: calc(50% + 40px);
+        min-height: 300px;
+    }
+}

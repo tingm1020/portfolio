@@ -25,26 +25,34 @@ const ProjectPage = () =>{
             <div className={styleProject.wrapper}>
                 <LoadComponent variant="variant1" />
                 <HeaderComponent variant="variant2" />
-                <h1>測試</h1>
+                <div className="KvContainer">
+                    <div className={`KvBlock KvBlockCenterW1100 ${styleProject.KvSpc}`}>
+                        <h2 className="TxtH2">The Archive.</h2>
+                        <p className="TxtDec spcBlockW60">從2018年開始，走過銀行、速食、汽車到議題行銷，多領域專案一一收錄其中</p>
+                    </div>
+                </div>
+                <div 
+                    className="PageContainer"
+                    ref={el => sectionRefs.current['projectFeatured'] = el}
+                >
+                    <div className="blockW90">
+                        <h4>projectFeatured</h4>
+
+                    </div>
+                </div>
+
+                <div 
+                    className="PageContainer"
+                    ref={el => sectionRefs.current['projectOverview'] = el}
+                >
+                    <div className="blockW90">
+                        <h4>projectOverview</h4>
+                    </div>
+                </div>
                 <ProjectList />
                 {/* <FooterComponent variant="variant1" /> */}
             </div>
-            <div 
-                className="Page_container"
-                ref={el => sectionRefs.current['projectFeatured'] = el}
-            >
-                <div className="block_90">
-                    <h4>projectFeatured</h4>
-                </div>
-            </div>
-            <div 
-                className="Page_container"
-                ref={el => sectionRefs.current['projectOverview'] = el}
-            >
-                <div className="block_90">
-                    <h4>projectOverview</h4>
-                </div>
-            </div>
+            
         </div>
     )
 }

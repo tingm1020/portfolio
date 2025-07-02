@@ -2,11 +2,11 @@ import stylesLoad from '../../../assets/styles/Load.module.scss';
 
 const LoadVariant1 = () => {
     return (
-        <div className={`${stylesLoad.Load_block} ${stylesLoad.Load_singlebox_style1}`}>
+        <div className={`${stylesLoad.LoadBlock} ${stylesLoad.LoadSingleboxStyle1}`}>
             {[...Array(4)].map((_, i) => (
-                <div key={i} className={stylesLoad.Load_singlebox_style1_ball}></div>
+                <div key={i} className={stylesLoad.LoadSingleboxStyle1Ball}></div>
             ))}
-            <svg viewBox="0 0 180 180" className={stylesLoad.Load_singlebox_style1_txt} width="180" height="180">
+            <svg viewBox="0 0 180 180" className={stylesLoad.LoadSingleboxStyle1Txt} width="180" height="180">
                 <defs>
                 <path
                     id="circlePath"
@@ -33,7 +33,7 @@ const LoadComponent = ({ variant }) => {
         }
     };
     return (
-        <div className={stylesLoad.Load_container}>
+        <div className={stylesLoad.LoadContainer}>
             {renderVariant()}
         </div>
     );

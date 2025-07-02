@@ -30,7 +30,7 @@ $pageColor1: #f7f8f2;
 .comFix{
     @include fix($w:100%,$h:auto,$t:0,$l:0);
     margin: 0 auto;
-    &_center{
+    &Center{
         @extend .comFix;
         top: 50%;
         left: 50%;
@@ -68,10 +68,10 @@ $pageColor1: #f7f8f2;
     animation: scaleOut 1s ease forwards;
 }
 .Swiper{
-    &_container{
+    &Container{
         overflow: hidden;
     }
-    &_single{
+    &Single{
         position: relative;
         display: block;
         padding: 2rem 0;
@@ -92,7 +92,7 @@ $pageColor1: #f7f8f2;
         .swiper-pagination-bullet-active{
             background: #fff;
         }
-        &_perbox{
+        &Perbox{
             padding: 0 0 3rem 0rem;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
@@ -101,10 +101,10 @@ $pageColor1: #f7f8f2;
             margin: 0 auto 10rem;
             background: #141414;
             
-            &_hover{
+            &Hover{
                 opacity: 0;
                 transition: all .6s;  
-                &_box{
+                &Box{
                     @include abs($w:85%,$h:auto,$b:5%,$l:50%);
                     transition: all .6s;
                     padding: 1rem 1rem 1rem 1.2rem;
@@ -112,7 +112,7 @@ $pageColor1: #f7f8f2;
                     box-sizing: border-box;
                     transform: translate(-50%,0%) translate3d(0,0px,0);
                 }
-                &_bg{
+                &Bg{
                     @include abs($w:100%,$h:100%,$t:50%,$l:50%);
                     transform: translate(-50%,-50%);
                     border-radius: 20px;
@@ -120,17 +120,17 @@ $pageColor1: #f7f8f2;
                 }
                 
                 &Active{
-                    .Swiper_single_perbox_hover{
+                    .SwiperSinglePerboxHover{
                         opacity: 1;
                         transition: all .6s;   
                     }
-                    .Swiper_single_perbox_hover_box{
+                    .SwiperSinglePerboxHoverBox{
                         transition: all .6s;
                         transition-delay: 1s;
                         animation: showUp .6s ease-in-out;
                         
                     }
-                    .Swiper_img_center img{
+                    .SwiperImgCenter img{
                         transform: scale(1.05);
                     }
                     @keyframes showUp {
@@ -157,14 +157,14 @@ $pageColor1: #f7f8f2;
         }
     }
     
-    &_spcBox{
-        &_40{
+    &SpcBox{
+        &W40{
             margin: 20px 4.5% 0 3%;
             padding: 1rem 2rem;
             box-sizing: border-box;
             vertical-align: middle;
         }
-        &_50{
+        &W50{
             vertical-align: middle;
             padding: 3rem;
             box-sizing: border-box;
@@ -175,34 +175,34 @@ $pageColor1: #f7f8f2;
             top: 50%;
             transform: translate(0,0%);
         }
-        &_top{
+        &Top{
             position: relative;
             display: block;
             .Txt{
-                &_h3{
+                &H3{
                      color: #fff;
                 }
-                &_h3,&_dec{
+                &H3,&Dec{
                     font-family: 'Noto Sans TC';
                     line-height: 1.5;
                     font-weight: 300;
                 }
-                &_dec{
+                &Dec{
                     color: $allColor4;
                 }
             }
         }
-        &_bottom{
+        &Bottom{
             position: relative;
             display: block;
             .Txt{
-                &_h4,&_h5{
+                &H4,&H5{
                     color: $allColor4;
                     font-family: 'Noto Sans TC';
                     line-height: 1.5;
                     font-weight: 300;
                 }
-                &_h5{
+                &H5{
                     min-height: 100px;
                     font-size: 1.1vw;
                     letter-spacing: 1px;
@@ -211,26 +211,26 @@ $pageColor1: #f7f8f2;
         }
     }
    
-    &_block{
+    &Block{
         @extend .comRel;
         background: #000;
-        &_noBg{
+        &NoBg{
             background: transparent;
         }
     }
-    &_title{
+    &Title{
         color: #fff;
         font-size: 1.05vw;
         line-height: 1.5;
         letter-spacing: .05vw;
 		margin: .5rem auto;
         font-family: "Noto Sans TC";
-        &_box{
+        &Box{
             @extend .comRel;
             max-width: 85%;
             margin: 0;
         }
-        &_dec{
+        &Dec{
             color: $allColor4;
             font-size: 1vw;
             line-height: 1.4;
@@ -238,22 +238,22 @@ $pageColor1: #f7f8f2;
             font-family: "Noto Sans TC";
         }
     }
-    &_txtBox{
-        &_tag{
+    &TxtBox{
+        &Tag{
             position: relative;
             display: inline-block;
             font-size: 1vw;
             line-height: 1.2;
             color: $allColor4;
         }
-        &_tools{
+        &Tools{
             position: relative;
             display: block;
             margin: .3rem 0rem .5rem -.2rem;
             text-align: left;
             min-height: 50px;
         }
-        &_tool{
+        &Tool{
             position: relative;
             display: inline-block;
             font-size: .9vw;
@@ -266,7 +266,7 @@ $pageColor1: #f7f8f2;
             padding: .1rem .5rem .2rem;
             box-sizing: border-box;
         }
-        &_time{
+        &Time{
             position: relative;
             display: block;
             color: #fff;
@@ -275,8 +275,8 @@ $pageColor1: #f7f8f2;
             line-height: 1.2;
         }
     }
-    &_icon{
-        &_style1{
+    &Icon{
+        &Style1{
             @include wh(50px,50px);
             padding: .2rem;
             box-sizing: border-box;
@@ -289,8 +289,8 @@ $pageColor1: #f7f8f2;
             }
         }
     }
-    &_img{
-        &_center{
+    &Img{
+        &Center{
             position: relative;
             display: inline-block;
             @include wh(100%,auto);
@@ -299,7 +299,7 @@ $pageColor1: #f7f8f2;
             margin: 3rem auto;
             transform: translate(-50%,0%);
             
-            &_noBottom{
+            &NoBottom{
                 margin: 3rem auto 0;
                 overflow: hidden;
                 border-radius: 30px;
@@ -314,32 +314,32 @@ $pageColor1: #f7f8f2;
     }
 }
 .spcBlock{
-    &_40{
+    &W40{
         vertical-align: bottom;
     }
-    &_60{
+    &W60{
         vertical-align: bottom;
     }
 }
-.Txt_origin{
+.TxtOrigin{
     line-height: 1;
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans TC';
 }
 .Txt{
-    &_num{
-        @extend .Txt_origin;
+    &Num{
+        @extend .TxtOrigin;
         font-size: 2vw;
         color: #fff;
         font-weight: 800;
     }
-    &_dec{
+    &Dec{
         min-height: 150px;
     }
 }
 .custom{
-    &_pagination{
+    &Pagination{
         background: #fff;
     }
 }
@@ -349,53 +349,53 @@ $pageColor1: #f7f8f2;
 =============================================*/
 @include rwd(max,1200){
     .Txt{
-        &_dec{
+        &Dec{
             min-height: 220px;
         }
-        &_num{
+        &Num{
             font-size: 48px;
         }
-        &_h5{
+        &H5{
             font-size: 16px;
         }
     }
     .Swiper{
-        &_spcBox{
-            &_40{
+        &SpcBox{
+            &W40{
                 margin: 20px 0;
                 padding: 1rem 5rem;
             }
-            &_50{
+            &W50{
                 padding: 2rem;
                 left: 50%;
                 width: 80%;
                 transform: translate(-50%,0);
             }
-            &_bottom{
+            &Bottom{
                 .Txt{
-                    &_h5{
+                    &H5{
                         margin: 1rem auto;
                         min-height: 100px;
                     }
                 }
             }
         }
-        &_title{
+        &Title{
             margin: .3rem auto .5rem;
             font-size: 14px;
-            &_dec{
+            &Dec{
                 font-size: 12px;
             }
         }
-        &_txtBox{
-            &_tag{
+        &TxtBox{
+            &Tag{
                 font-size: 1.3vw;
             }
-            &_tool{
+            &Tool{
                 font-size: 1.2vw;
                 padding: .2rem .5rem .3rem;
             }
-            &_time{
+            &Time{
                 font-size: 1.3vw;
             }
         }
@@ -403,24 +403,24 @@ $pageColor1: #f7f8f2;
 }
 @include rwd(max,1024){
     .Swiper{
-        &_spcBox{
-            &_bottom{
+        &SpcBox{
+            &Bottom{
                 .Txt{
-                    &_h5{
+                    &H5{
                         font-size: 16px;
                     }
                 }
             }
         }
-        &_title{
+        &Title{
             font-size: 14px;
-            &_dec{
+            &Dec{
                 font-size: 12px;
             }
         }
     }
     .Txt{
-        &_num{
+        &Num{
             font-size: 28px;
         }
     }
@@ -428,26 +428,26 @@ $pageColor1: #f7f8f2;
 
 @include rwd(max,750){
     .Txt{
-        &_dec{
+        &Dec{
             min-height: 150px;
         }
-        &_h3{
+        &H3{
             font-size: 24px;
         }
-        &_h5{
+        &H5{
             font-size: 14px;
         }
-        &_num{
+        &Num{
             font-size: 24px;
         }
     }
     .Swiper{
-        &_single{
+        &Single{
             border-radius: 30px;
-            &_perbox{
+            &Perbox{
                 margin: 0 auto 5rem;
-                &_hover{
-                    &_box{
+                &Hover{
+                    &Box{
                         width: 90%;
                         padding: .5rem 1rem;
                     }
@@ -456,26 +456,26 @@ $pageColor1: #f7f8f2;
             }
         }
         
-        &_img{
-            &_center{
+        &Img{
+            &Center{
                 margin: 1.5rem auto .5rem;
             }
         }
-        &_spcBox{
-            &_40{
+        &SpcBox{
+            &W40{
                 padding: 1rem;
                 margin: 20px auto;
             }
-            &_50{
+            &W50{
                 width: 100%;
                 padding: 0;
                 margin: 0;
                 border: none;
                 background: none;
             }
-            &_bottom{
+            &Bottom{
                 .Txt{
-                    &_h5{
+                    &H5{
                         font-size: 16px;
                         min-height: 120px;
                     }
@@ -483,24 +483,24 @@ $pageColor1: #f7f8f2;
                 
             }
         }
-        &_txtBox{
-            &_tag{
+        &TxtBox{
+            &Tag{
                 font-size: 14px;
             }
-            &_tool{
+            &Tool{
                 font-size: 12px;
             }
-            &_time{
+            &Time{
                 font-size: 14px;
             }
         }
-        &_title{
+        &Title{
             font-size: 16px;
             line-height: 1.5;
-            &_box{
+            &Box{
                 max-width: 100%;
             }
-            &_dec{
+            &Dec{
                 font-size: 14px;
             }
         }
@@ -508,10 +508,10 @@ $pageColor1: #f7f8f2;
 }
 @include rwd(max,414){
     .Swiper{
-        &_title{
+        &Title{
             font-size: 14px;
         }
-        &_dec{
+        &Dec{
             font-size: 12px;
         }
     }

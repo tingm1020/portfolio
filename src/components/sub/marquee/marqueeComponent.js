@@ -27,7 +27,7 @@ const MarqueeVariant2 = () => {
 
     return (
         <Marquee speed={30} direction="left" gradient={false}>
-            <div className="Marquee_container">
+            <div className="MarqueeContainer">
                 {imgs.map((i, index) => (
                     <Image 
                         key={index} 
