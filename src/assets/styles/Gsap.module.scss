@@ -168,6 +168,9 @@ $pageColor1: #f7f8f2;
                 vertical-align: middle;
                 @include wh(30px,30px);
                 border-radius: 100%;
+                background-size: 70% auto;
+                background-repeat: no-repeat;
+                background-position: center;
             }
             &Dec{
                 position: relative;

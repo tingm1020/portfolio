@@ -53,17 +53,11 @@ const HeaderVariant1 = () => {
                                 className={stylesHeader.menuMenuBtn}
                                 onClick={() => scrollToPage("anchor2")}
                             >
-                            技能專長
-                            </button>
-                            <button
-                                className={stylesHeader.menuMenuBtn}
-                                onClick={() => scrollToPage("anchor3")}
-                            >
                             專案拆解
                             </button>
                             <button
                                 className={stylesHeader.menuMenuBtn}
-                                onClick={() => scrollToPage("anchor4")}
+                                onClick={() => scrollToPage("anchor3")}
                             >
                             深入歷程
                             </button>
@@ -83,7 +77,7 @@ const HeaderVariant1 = () => {
                     <button 
                         onClick={() => setIsMenuOpen(!isMenuOpen)} 
                         className="menuMbBtn"
-                        ariaLabel="切換選單"
+                        aria-label="切換選單"
                     >
                         <span></span>
                         <span></span>
@@ -105,17 +99,11 @@ const HeaderVariant1 = () => {
                             className={stylesHeader.menuMenuBtn}
                             onClick={() => scrollToPage("anchor2")}
                         >
-                        技能專長
-                        </button>
-                        <button
-                            className={stylesHeader.menuMenuBtn}
-                            onClick={() => scrollToPage("anchor3")}
-                        >
                         專案拆解
                         </button>
                         <button
                             className={stylesHeader.menuMenuBtn}
-                            onClick={() => scrollToPage("anchor4")}
+                            onClick={() => scrollToPage("anchor3")}
                         >
                         深入歷程
                         </button>

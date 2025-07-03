@@ -43,7 +43,12 @@ $pageColor1: #f7f8f2;
 		padding: 5% 0 10%;
 		box-sizing: border-box;
 	}
+	&Singlebox{
+		padding: 1%;
+		box-sizing: border-box;
+	}
 }
+
 .menu{
 	&Pos{
 		&Top{
@@ -111,7 +116,15 @@ $pageColor1: #f7f8f2;
 		}
 	}
 }
-
+.txt{
+	&Copyright{
+		position: relative;
+		text-align: center;
+		color: $allColor6;
+		font-size: 12px;
+		letter-spacing: 2px;
+	}
+}
 /*=============================================
 =                     RWD                     =
 =============================================*/
@@ -160,6 +173,16 @@ $pageColor1: #f7f8f2;
 				font-size: 14px;
 				min-height: 30px;
 			}
+		}
+	}
+	.Footer{
+		&Singlebox{
+			padding: 20px;
+		}
+	}
+	.txt{
+		&Copyright{
+			letter-spacing: 1px;
 		}
 	}
 }

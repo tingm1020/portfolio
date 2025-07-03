@@ -156,7 +156,7 @@ const GsapVariant2 = () =>{
               { text: "", role: {}},
               {
                 text: "將專題規格簡化為「無後台、手動更新」，解決更新頻率不高但重複性高的問題，讓工讀生也能協助維護，並同步製作更新說明文件",
-                role: { img: "https://fakeimg.pl/30x30/000000/ffffff", description: "遠見on air／用聽的，輕鬆掌握國際、產經、科技新趨勢！"}
+                role: { img: "images/icon/chat-role-icon1.svg", description: "遠見on air／用聽的，輕鬆掌握國際、產經、科技新趨勢！"}
               },
               { text: "", role: {}},
               { text: "", role: {}}
@@ -165,11 +165,11 @@ const GsapVariant2 = () =>{
               { text: "", role: {}},
               {
                 text: "與後端合作串接資料庫，實作搜尋榜單功能，並參與前期搜尋邏輯的討論與設計",
-                role: { img: "https://fakeimg.pl/30x30/000000/ffffff", description: "擺脫教改魔咒！見證大學轉型奇蹟—2024最佳大學排行"}
+                role: { img: "images/icon/chat-role-icon3.svg", description: "擺脫教改魔咒！見證大學轉型奇蹟—2024最佳大學排行"}
               },
               {
                 text: "結合專題主題設計 loading 動畫倒數，延伸專案視覺風格，強化整體體驗",
-                role: { img: "https://fakeimg.pl/30x30/000000/ffffff", description: "台灣癌逝率高於全球！每4分鐘19秒一人罹癌"}
+                role: { img: "images/icon/chat-role-icon2.svg", description: "台灣癌逝率高於全球！每4分鐘19秒一人罹癌"}
               },
               { text: "", role: {}},
               { text: "", role: {}}

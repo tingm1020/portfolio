@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from 'react';
 import stylesFooter from '../assets/styles/Footer.module.scss';
 
 const FooterVariant1 = () => {
@@ -44,11 +44,29 @@ const FooterVariant1 = () => {
     );
 };
 
+const FooterVariant2 = () => {
+    const [year, setYear] = useState('');
+    
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
+
+    return(
+        <div className={stylesFooter.FooterSinglebox}>
+            <div className='blockW90'>
+                <p className={stylesFooter.txtCopyright}>© {year} Riva Hsu. All rights reserved.</p>
+            </div>
+        </div>
+    )
+}
+
 const FooterComponent = ({ variant }) => {
     const renderVariant = () => {
         switch (variant) {
             case "variant1": 
                 return <FooterVariant1 />;
+            case "variant2":
+                return <FooterVariant2 />;
             default:
                 return <FooterVariant1 />;
         }

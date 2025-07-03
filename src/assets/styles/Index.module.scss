@@ -47,6 +47,7 @@ $pageColor1: #f7f8f2;
     min-height: 750px;
     background: $pageColor1;
     transition: all .6s;
+    overflow: hidden;
 }
 .Kv{
     &Spc{
@@ -189,6 +190,13 @@ $pageColor1: #f7f8f2;
                 color: #fff;
             }
             
+        }
+    }
+}
+@include rwd(max,414){
+    .TxtBox{
+        &H2{
+            font-size: 24px;
         }
     }
 }

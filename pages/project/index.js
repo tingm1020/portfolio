@@ -5,7 +5,7 @@ import ProjectList from "@/components/project/projectList";
 import HeaderComponent from "../../src/components/Header";
 import styleProject from "../../src/assets/styles/Project.module.scss"
 import LoadComponent from "../../src/components/sub/load/loadComponent";
-// import FooterComponent from "../../src/components/Footer";
+import FooterComponent from "../../src/components/Footer";
 
 const ProjectPage = () =>{
     const router = useRouter();
@@ -47,10 +47,12 @@ const ProjectPage = () =>{
                 >
                     <div className="blockW90">
                         <h4>projectOverview</h4>
+                        <ProjectList />
                     </div>
                 </div>
-                <ProjectList />
-                {/* <FooterComponent variant="variant1" /> */}
+
+                
+                <FooterComponent variant="variant2" />
             </div>
             
         </div>

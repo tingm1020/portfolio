@@ -313,6 +313,19 @@ $pageColor1: #f7f8f2;
         }
     }
 }
+.Btn{
+    &Single{
+        &Small{
+            background: transparent;
+            color: $allColor3;
+            font-family: 'Noto Sans TC';
+            display: inline-block;
+            width: auto;
+            padding: 0;
+            letter-spacing: 1px;
+        }
+    }
+}
 .spcBlock{
     &W40{
         vertical-align: bottom;

@@ -302,11 +302,13 @@ const SwiperComponent = ({ variant }) => {
                                         <div className={stylesSwiper.SwiperSpcBoxTop}>
                                             <h3 className={`TxtH3 ${stylesSwiper.TxtH3}`}>全頁式圖集</h3>
                                             <p className={`TxtDec ${stylesSwiper.TxtDec}`}>利用上下漸層遮蔽素材限制，製作沉浸式圖集，提升視覺體驗與內容連貫性。</p>
+                                            
                                         </div>
                                         <div className="BorderCenter"></div>
                                         <div className={stylesSwiper.SwiperSpcBoxBottom}>
                                             <h4 className={`TxtNormal ${stylesSwiper.TxtNum}`}>Image Gallery</h4>
                                             <h5 className={`TxtH5 ${stylesSwiper.TxtH5}`}>利用 height: vh來拉高滾動區域，並透過display: flex控制內部元素的排列方式。</h5>
+                                            <a href="https://event.gvm.com.tw/talented/2025/index.html" target="_blank" className={`BtnSingleSmall ${stylesSwiper.BtnSingleSmall}`}>❭❭ 2025未來人才關鍵報告</a>
                                         </div>
                                     </motion.div>
                                     <div className={`spcBoxW50 ${stylesSwiper.SwiperSpcBoxW50}`}>
@@ -345,6 +347,7 @@ const SwiperComponent = ({ variant }) => {
                                         <div className={stylesSwiper.SwiperSpcBoxBottom}>
                                             <h4 className={`TxtNormal ${stylesSwiper.TxtNum}`}>Unscored test</h4>
                                             <h5 className={`TxtH5 ${stylesSwiper.TxtH5}`}>主要以Swiper為框架，使用者選定選項後，鎖定其他選項，並反轉顯示【已選擇】與【正確】答案。計時結束後slideNext()，並解鎖所有選項。</h5>
+                                            <a href="https://event.gvm.com.tw/trend/2025/index.html" target="_blank" className={`BtnSingleSmall ${stylesSwiper.BtnSingleSmall}`}>❭❭ 川普2.0起風了！2025全球新變局</a>
                                         </div>
                                     </motion.div>
                                     <div className={`spcBoxW50 ${stylesSwiper.SwiperSpcBoxW50}`}>
@@ -383,6 +386,7 @@ const SwiperComponent = ({ variant }) => {
                                         <div className={stylesSwiper.SwiperSpcBoxBottom}>
                                             <h4 className={`TxtNormal ${stylesSwiper.TxtNum}`}>Component library</h4>
                                             <h5 className={`TxtH5 ${stylesSwiper.TxtH5}`}>由於專題內容以客製化為主，版型尚未落定，且前後台開發成本較高，因此將採用HTML + CSS切版，並建立可重複使用的版型元件，以提升建置效率。</h5>
+                                             <div className={`BtnSingleSmall ${stylesSwiper.BtnSingleSmall}`}></div>
                                         </div>
                                     </motion.div>
                                     <div className={`spcBoxW50 ${stylesSwiper.SwiperSpcBoxW50}`}>

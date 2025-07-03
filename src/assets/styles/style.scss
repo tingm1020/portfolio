@@ -357,6 +357,17 @@ svg{
 	}
 }
 /*=============================================
+=                  Header                     =
+=============================================*/
+.Header{
+	&Container{
+		position: relative;
+		@include wh(100%,auto);
+		display: block;
+		margin: 0 auto;
+	}
+}
+/*=============================================
 =                    menu                     =
 =============================================*/
 .menu{
@@ -585,8 +596,8 @@ svg{
 						transition: all .3s;
 					}
 				}
-				.swiper-button-prev2,
-				.swiper-button-next2{
+				.swiperButtonPrev2,
+				.swiperButtonNext2{
 					position: relative;
 					display: inline-block;
 					@include wh(3vw,3vw);
@@ -602,7 +613,7 @@ svg{
 					}
 				}
 				
-				.swiper-button-prev2{
+				.swiperButtonPrev2{
 					background: linear-gradient(212deg, $allColor1 0%, $allColor1);
 					transition: all .6s;
 					background-size: 100% 100%;
@@ -620,7 +631,7 @@ svg{
 						}
 					}
 				}
-				.swiper-button-next2{
+				.swiperButtonNext2{
 					background: linear-gradient(212deg, $allColor1 0%, $allColor1);
 					transition: all .6s;
 					background-size: 100% 100%;
