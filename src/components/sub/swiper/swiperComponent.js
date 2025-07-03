@@ -130,7 +130,52 @@ const SwiperVariant2 = () =>{
             tools: ['Aurora Animation', 'Unscored test', 'Swiper', 'AOS'],
             time: '5 days',
             url: 'https://event.gvm.com.tw/trend/2025/index.html'
-        }
+        },
+        {
+            id: 6,
+            imgSrc: 'images/slide/swiper-perBox-img6.jpg',
+            title: '與後端合作串接資料庫搜尋榜單形式，包含前期搜尋邏輯討論',
+            description: '擺脫教改魔咒！見證大學轉型奇蹟—2024最佳大學排行',
+            tools: ['SVG Animation', 'Search', 'slimselect', 'Swiper'],
+            time: '14 days',
+            url: 'https://education.gvm.com.tw/rankings/2024/'
+        },
+        {
+            id: 7,
+            imgSrc: 'images/slide/swiper-perBox-img7.jpg',
+            title: '制定公版測驗題組，以前端方式解決互動測驗',
+            description: '人生不設限！擁抱百歲超級世代',
+            tools: ['Scored test', 'Scroll Animation', '', 'Swiper'],
+            time: '5 days',
+            url: 'https://event.gvm.com.tw/202504_super_aged/index.html'
+        },
+        {
+            id: 8,
+            imgSrc: 'images/slide/swiper-perBox-img8.jpg',
+            title: '結合專題元素作為loading動畫倒數，接續主視覺',
+            description: '台灣癌逝率高於全球！每4分鐘19秒一人罹癌',
+            tools: ['Countdown Animation ', 'Swiper'],
+            time: '7 days',
+            url: 'https://event.gvm.com.tw/202302_cancer/'
+        },
+        {
+            id: 9,
+            imgSrc: 'images/slide/swiper-perBox-img9.jpg',
+            title: '嘗試以背景動畫結合前景做物件拆解',
+            description: '2024引爆你的變革奇點',
+            tools: ['Kv Animation ', 'AOS', 'Timeline'],
+            time: '7 days',
+            url: 'https://event.gvm.com.tw/trend/2024/index.html'
+        },
+        {
+            id: 10,
+            imgSrc: 'images/slide/swiper-perBox-img10.jpg',
+            title: '首次承接HBR專案，以不同網頁格式及設計的作業方式，緊湊的完成專案',
+            description: '連結經典．啟發未來',
+            tools: ['Kv Animation ', 'Swiper', 'AOS'],
+            time: '7 days',
+            url: 'https://event.hbrtaiwan.com/HBR100/connecting/index.html'
+        },
     ];
     useEffect(() => {
         if (swiperInstance && prevRef.current && nextRef.current) {

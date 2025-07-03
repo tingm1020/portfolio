@@ -117,7 +117,8 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <div id="anchor3" className={`PageContainer ${stylesIndex.PageDecMbBlack}`}>
+            <div id="anchor3"></div>
+            <div className={`PageContainer ${stylesIndex.PageDecMbBlack}`}>
               <div className="blockW90">
                 <div className={`TxtBox ${stylesIndex.TxtBoxTop}`}>
                 <div className={stylesIndex.TxtBoxH5}>專案亮點</div>

@@ -27,8 +27,7 @@ const HeaderVariant1 = () => {
             <div className={stylesHeader.HeaderStyle1Block}>
                 <div className={stylesHeader.menuPosLeft}>
                     <a 
-                        href="https://github.com/tingm1020?tab=projects" 
-                        target="_blank" 
+                        href="#" 
                         className={stylesHeader.menuLogoImg}
                     >
                         <Image 
@@ -47,13 +46,13 @@ const HeaderVariant1 = () => {
                                 className={stylesHeader.menuMenuBtn}
                                 onClick={() => scrollToPage("anchor1")}
                             >
-                            專案介紹
+                            近期實作
                             </button>
                             <button
                                 className={stylesHeader.menuMenuBtn}
                                 onClick={() => scrollToPage("anchor2")}
                             >
-                            專案拆解
+                            專案歷程
                             </button>
                             <button
                                 className={stylesHeader.menuMenuBtn}
@@ -93,13 +92,13 @@ const HeaderVariant1 = () => {
                             className={stylesHeader.menuMenuBtn}
                             onClick={() => scrollToPage("anchor1")}
                         >
-                        專案介紹
+                        近期實作
                         </button>
                         <button
                             className={stylesHeader.menuMenuBtn}
                             onClick={() => scrollToPage("anchor2")}
                         >
-                        專案拆解
+                        專案歷程
                         </button>
                         <button
                             className={stylesHeader.menuMenuBtn}
@@ -159,8 +158,7 @@ const HeaderVariant2 = () =>{
             <div className={stylesHeader.HeaderStyle1Block}>
                 <div className={stylesHeader.menuPosLeft}>
                     <a
-                        href="https://github.com/tingm1020?tab=projects"
-                        target="_blank"
+                        href="#"
                         className={stylesHeader.menuLogoImg}
                     >
                         <Image
