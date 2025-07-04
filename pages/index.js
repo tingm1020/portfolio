@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import stylesIndex from "../src/assets/styles/Index.module.scss";
 import SwiperComponent from "../src/components/sub/swiper/swiperComponent";
@@ -8,7 +9,6 @@ import LoadComponent from "../src/components/sub/load/loadComponent";
 import FooterComponent from "../src/components/Footer";
 import { motion } from "framer-motion";
 import HeaderComponent from "../src/components/Header";
-import { useEffect, useRef, useState } from "react";
 import MetaComponent from "../src/components/Meta";
 
 

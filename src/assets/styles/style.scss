@@ -656,6 +656,29 @@ svg{
 		}
 	}
 }
+// Section
+.Section{
+	&Alt{
+		display: flex;
+		flex-direction: column;
+		gap: 80px;
+		&Block{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			&Reverse{
+				flex-direction: row-reverse;
+				&W30{
+					width: 30%;
+				}
+				&W50{
+					width: 50%;
+				}
+			}
+		}
+	}
+
+}
 .MarqueeContainer{
 	display: flex;
 	img{

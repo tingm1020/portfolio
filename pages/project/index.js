@@ -1,11 +1,13 @@
 
 import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import ProjectList from "@/components/project/projectList";
 import HeaderComponent from "../../src/components/Header";
 import styleProject from "../../src/assets/styles/Project.module.scss"
 import LoadComponent from "../../src/components/sub/load/loadComponent";
 import FooterComponent from "../../src/components/Footer";
+import MetaComponent from "../../src/components/Meta";
 
 const ProjectPage = () =>{
     const router = useRouter();
@@ -20,8 +22,32 @@ const ProjectPage = () =>{
     }
     }, [router.query.section]);
 
+    const [isReady, setIsReady] = useState(false);
+    const [hideLoading, setHideLoading] = useState(false);
+
+    useEffect(() => {
+        const handleLoad = () =>{
+            setTimeout(() =>{
+                setIsReady(true);
+                setTimeout(() => setHideLoading(true), 600);
+            }, 2000);
+        };
+
+        if(document.readyState === 'complete') handleLoad();
+        else {
+            window.addEventListener('load', handleLoad);
+            return () => window.removeEventListener('load',handleLoad);
+        }
+    }, []);
     return (
-        <div>
+        <>
+            <MetaComponent title="Project Library｜Riva Hsu"/>
+            {!hideLoading && (
+                <LoadComponent variant="variant1" isFadingOut={isReady} />
+            )}
+            {isReady &&(
+                <></>
+            )}
             <div className={styleProject.wrapper}>
                 <LoadComponent variant="variant1" />
                 <HeaderComponent variant="variant2" />
@@ -36,7 +62,46 @@ const ProjectPage = () =>{
                     ref={el => sectionRefs.current['projectFeatured'] = el}
                 >
                     <div className="blockW90">
-                        <h4>projectFeatured</h4>
+                        <div className="SectionAlt">
+                            <div className={`SectionAltBlock SectionAltBlockW30`}>
+                                <div className="SectionAltImg">
+                                    <Image
+                                        src="/images/slide/swiper-spcBox-img1.jpg"
+                                        // src="/images/project/All001.jpg"
+                                        alt="Section-alt-img"
+                                        width={450}
+                                        height={200}
+                                    />
+                                </div>
+                                <div className="SectionAltTag">教育、專案</div>
+                                <div className="SectionAltTitle">遠見台灣最佳大學排行榜</div>
+                                <button 
+                                    className="BtnSingle BtnSingleSmallBlack"
+                                    onClick={() => alert("建置中")}
+                                >
+                                    more
+                                </button>
+                            </div>
+                            <div className={`SectionAltBlock SectionAltBlockReverse SectionAltBlockW50`}>
+                                <div className="SectionAltImg">
+                                    <Image
+                                        src="/images/slide/swiper-spcBox-img1.jpg"
+                                        // src="/images/project/All002.jpg"
+                                        alt="Placeholder"
+                                        width={450}
+                                        height={200}
+                                    />
+                                </div>
+                                <div className="SectionAltTag">歷年作品集</div>
+                                <div className="SectionAltTitle">UI套件、專案</div>
+                                <button
+                                    className="BtnSingle BtnSingleSmallBlack"
+                                    onClick={() => alert("建置中")}
+                                >
+                                    more
+                                </button>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -52,10 +117,10 @@ const ProjectPage = () =>{
                 </div>
 
                 
-                <FooterComponent variant="variant2" />
+                <FooterComponent variant="variant1" />
             </div>
             
-        </div>
+        </>
     )
 }
 
