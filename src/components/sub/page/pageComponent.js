@@ -6,9 +6,9 @@ import RadioComponent from "../radio/radioComponent";
 
 
 const PageComponent = ({ variant }) => {
-    const [selectedImage1, setSelectImage1] = useState("https://fakeimg.pl/1600x1600/2b2b29/e1dcd6/?text=slide1");
-    const [selectedImage2, setSelectImage2] = useState("https://fakeimg.pl/1600x1600/5a5a5a/cccccc/?text=slide4");
-    const [selectedImage3, setSelectImage3] = useState("https://fakeimg.pl/1600x1600/f4f4f4/000000/?text=slide7");
+    const [selectedImage1, setSelectImage1] = useState("https://placehold.co/1600x1600/2b2b29/e1dcd6/?text=slide1");
+    const [selectedImage2, setSelectImage2] = useState("https://placehold.co/1600x1600/5a5a5a/cccccc/?text=slide4");
+    const [selectedImage3, setSelectImage3] = useState("https://placehold.co/1600x1600/f4f4f4/000000/?text=slide7");
     const [fadeIn1, setFadeIn1] = useState(false);
     const [fadeIn2, setFadeIn2] = useState(false);
     const [fadeIn3, setFadeIn3] = useState(false);
@@ -37,16 +37,16 @@ const PageComponent = ({ variant }) => {
         let imageUrl;
         switch (value) {
             case 'image1':
-                imageUrl = 'https://fakeimg.pl/1600x1600/2b2b29/e1dcd6/?text=slide1';
+                imageUrl = 'https://placehold.co/1600x1600/2b2b29/e1dcd6/?text=slide1';
                 break;
             case 'image2':
-                imageUrl = 'https://fakeimg.pl/1600x1600/5a5a5a/ffffff/?text=slide2';
+                imageUrl = 'https://placehold.co/1600x1600/5a5a5a/ffffff/?text=slide2';
                 break;
             case 'image3':
-                imageUrl = 'https://fakeimg.pl/1600x1600/3b3b3b/cccccc/?text=slide3';
+                imageUrl = 'https://placehold.co/1600x1600/3b3b3b/cccccc/?text=slide3';
                 break;
             default:
-                imageUrl = 'https://fakeimg.pl/1600x1600/2b2b29/e1dcd6/?text=slide1';
+                imageUrl = 'https://placehold.co/1600x1600/2b2b29/e1dcd6/?text=slide1';
         }
         setSelectImage1(imageUrl);
     };
@@ -56,16 +56,16 @@ const PageComponent = ({ variant }) => {
         let imageUrl;
         switch (value) {
             case 'image4':
-                imageUrl = 'https://fakeimg.pl/1600x1600/5a5a5a/cccccc/?text=slide4';
+                imageUrl = 'https://placehold.co/1600x1600/5a5a5a/cccccc/?text=slide4';
                 break;
             case 'image5':
-                imageUrl = 'https://fakeimg.pl/1600x1600/5a5a5a/ffffff/?text=slide5';
+                imageUrl = 'https://placehold.co/1600x1600/5a5a5a/ffffff/?text=slide5';
                 break;
             case 'image6':
-                imageUrl = 'https://fakeimg.pl/1600x1600/3b3b3b/cccccc/?text=slide6';
+                imageUrl = 'https://placehold.co/1600x1600/3b3b3b/cccccc/?text=slide6';
                 break;
             default:
-                imageUrl = 'https://fakeimg.pl/1600x1600/5a5a5a/ffffff/?text=slide4';
+                imageUrl = 'https://placehold.co/1600x1600/5a5a5a/ffffff/?text=slide4';
         }
         setSelectImage2(imageUrl);
     }
@@ -75,16 +75,16 @@ const PageComponent = ({ variant }) => {
         let imageUrl;
         switch (value) {
             case 'image7':
-                imageUrl = 'https://fakeimg.pl/1600x1600/b18c67/2b2b29/?text=slide7';
+                imageUrl = 'https://placehold.co/1600x1600/b18c67/2b2b29/?text=slide7';
                 break;
             case 'image8':
-                imageUrl = 'https://fakeimg.pl/1600x1600/ccbfb7/2b2b29/?text=slide8';
+                imageUrl = 'https://placehold.co/1600x1600/ccbfb7/2b2b29/?text=slide8';
                 break;
             case 'image9':
-                imageUrl = 'https://fakeimg.pl/1600x1600/2b2b29/ccbfb7/?text=slide9';
+                imageUrl = 'https://placehold.co/1600x1600/2b2b29/ccbfb7/?text=slide9';
                 break;
             default:
-                imageUrl = 'https://fakeimg.pl/1600x1600/b18c67/2b2b29/?text=slide7';
+                imageUrl = 'https://placehold.co/1600x1600/b18c67/2b2b29/?text=slide7';
         }
         setSelectImage3(imageUrl);
     }

@@ -55,3 +55,16 @@ $pageColor1: #f7f8f2;
         min-height: 300px;
     }
 }
+.Btn{
+    &Single{
+        margin: 0;
+        pointer-events: all;
+    }
+}
+.Block{
+    &Offset{
+        &Top{
+            margin-top: -20%;
+        }
+    }
+}

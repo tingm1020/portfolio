@@ -51,16 +51,16 @@ const GsapVariant1 = () => {
       <div className={`${stylesGsap.circle} ${stylesGsap.clusterPieces}`}></div>
       <div className={`${stylesGsap.owlHorned} ${stylesGsap.clusterPieces}`} ref={clusterGreatRef}>
         <Image 
-          src="https://fakeimg.pl/900x900/000000/ffffff"
-          alt="fakeimg"
+          src="https://placehold.co/900x900/000000/ffffff"
+          alt="placehold"
           width={900}
           height={900}
         />
       </div>
       <div className={`${stylesGsap.dotsBlue} ${stylesGsap.clusterPieces}`} >
         <Image 
-          src="https://fakeimg.pl/900x900/000000/ffffff"
-          alt="fakeimg"
+          src="https://placehold.co/900x900/000000/ffffff"
+          alt="placehold"
           width={900}
           height={900}
         />

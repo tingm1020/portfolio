@@ -30,24 +30,24 @@ const SwiperVariant1 = () =>{
             >
                 <SwiperSlide>
                     <Image 
-                        src="https://fakeimg.pl/1980x1290/282828/e1dcd6" 
-                        alt="Fake Image"
+                        src="https://placehold.co/1980x1290/282828/e1dcd6" 
+                        alt="placehold"
                         width={1980}
                         height={1290}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image 
-                        src="https://fakeimg.pl/1980x1290/282828/e1dcd6" 
-                        alt="Fake Image"
+                        src="https://placehold.co/1980x1290/282828/e1dcd6" 
+                        alt="placehold"
                         width={1980}
                         height={1290}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image 
-                        src="https://fakeimg.pl/1980x1290/282828/e1dcd6" 
-                        alt="Fake Image"
+                        src="https://placehold.co/1980x1290/282828/e1dcd6" 
+                        alt="placehold"
                         width={1980}
                         height={1290}
                     />
@@ -360,7 +360,7 @@ const SwiperComponent = ({ variant }) => {
                                         <div className={`ImgFit13by9 ${stylesSwiper.SwiperImgCenter}`}>
                                             <Image 
                                                 src="images/slide/swiper-spcBox-img1.jpg" 
-                                                alt="Fake Image"
+                                                alt="placehold"
                                                 fill
                                                 style={{ objectFit: 'cover' }}
                                             />
@@ -399,7 +399,7 @@ const SwiperComponent = ({ variant }) => {
                                         <div className={`ImgFit13by9 ${stylesSwiper.SwiperImgCenter}`}>
                                             <Image 
                                                 src="images/slide/swiper-spcBox-img2.jpg" 
-                                                alt="Fake Image"
+                                                alt="placehold"
                                                 fill
                                                 style={{ objectFit: 'cover' }}
                                             />
@@ -438,7 +438,7 @@ const SwiperComponent = ({ variant }) => {
                                         <div className={`ImgFit13by9 ${stylesSwiper.SwiperImgCenter}`}>
                                             <Image 
                                                 src="images/slide/swiper-spcBox-img3.jpg" 
-                                                alt="Fake Image"
+                                                alt="placehold"
                                                 fill
                                                 style={{ objectFit: 'cover' }}
                                             />

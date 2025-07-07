@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'fakeimg.pl',
+        hostname: 'placehold.co',
         port: '',
         pathname: '/**',
       },

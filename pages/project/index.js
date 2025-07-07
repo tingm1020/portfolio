@@ -8,6 +8,7 @@ import styleProject from "../../src/assets/styles/Project.module.scss"
 import LoadComponent from "../../src/components/sub/load/loadComponent";
 import FooterComponent from "../../src/components/Footer";
 import MetaComponent from "../../src/components/Meta";
+import { motion } from "framer-motion";
 
 const ProjectPage = () =>{
     const router = useRouter();
@@ -39,6 +40,57 @@ const ProjectPage = () =>{
             return () => window.removeEventListener('load',handleLoad);
         }
     }, []);
+
+    const sectionAltData = [
+        {
+            img:{
+                src:'https://placehold.co/900x600/ccbfb7/ffffff',
+                // src:'/images/project/All001.jpg',
+                alt:'placehold',
+                width: 900,
+                height: 600,
+                // priority: true,
+            },
+            tag:'教育、專案',
+            title: '遠見台灣最佳大學排行榜',
+            btnAction: () => alert("建置中"),
+            alignClass: 'SectionAltRight',
+            widthClass: 'SectionAltW35',
+            extraClass: '',
+        },
+        {
+            img:{
+                src:'https://placehold.co/900x600/ccbfb7/ffffff',
+                // src:'/images/project/All002.jpg',
+                alt:'placehold',
+                width: 900,
+                height: 600,
+                // priority: true,
+            },
+            tag:'歷年作品集',
+            title: 'UI套件、專案',
+            btnAction: () => alert("建置中"),
+            alignClass: 'SectionAltLeft',
+            widthClass: 'SectionAltW50',
+            extraClass: styleProject.BlockOffsetTop,
+        },
+         {
+            img:{
+                src:'https://placehold.co/900x600/ccbfb7/ffffff',
+                // src:'/images/project/All003.jpg',
+                alt:'placehold',
+                width: 900,
+                height: 600,
+                // priority: true,
+            },
+            tag:'專案',
+            title: '錯誤日記簿',
+            btnAction: () => alert("建置中"),
+            alignClass: 'SectionAltRight',
+            widthClass: 'SectionAltW60',
+            extraClass: '',
+        },
+    ]
     return (
         <>
             <MetaComponent title="Project Library｜Riva Hsu"/>
@@ -61,46 +113,43 @@ const ProjectPage = () =>{
                     className="PageContainer"
                     ref={el => sectionRefs.current['projectFeatured'] = el}
                 >
-                    <div className="blockW90">
+                    <div className="blockW80">
                         <div className="SectionAlt">
-                            <div className={`SectionAltBlock SectionAltBlockW30`}>
-                                <div className="SectionAltImg">
-                                    <Image
-                                        src="/images/slide/swiper-spcBox-img1.jpg"
-                                        // src="/images/project/All001.jpg"
-                                        alt="Section-alt-img"
-                                        width={450}
-                                        height={200}
-                                    />
-                                </div>
-                                <div className="SectionAltTag">教育、專案</div>
-                                <div className="SectionAltTitle">遠見台灣最佳大學排行榜</div>
-                                <button 
-                                    className="BtnSingle BtnSingleSmallBlack"
-                                    onClick={() => alert("建置中")}
+                            {sectionAltData.map((item,index) => (
+                                <motion.div 
+                                    className={`SectionAltBlock ${item.extraClass}`}
+                                    key={index}
+                                    initial={{ opacity: 0, y: 150 }}
+                                    whileInView={{ opacity:1, y:0 }}
+                                    transition={{ duration: 1, delay: index * 0.2 }}
+                                    viewport={{ once: false, amount: 0.2}}
                                 >
-                                    more
-                                </button>
-                            </div>
-                            <div className={`SectionAltBlock SectionAltBlockReverse SectionAltBlockW50`}>
-                                <div className="SectionAltImg">
-                                    <Image
-                                        src="/images/slide/swiper-spcBox-img1.jpg"
-                                        // src="/images/project/All002.jpg"
-                                        alt="Placeholder"
-                                        width={450}
-                                        height={200}
-                                    />
-                                </div>
-                                <div className="SectionAltTag">歷年作品集</div>
-                                <div className="SectionAltTitle">UI套件、專案</div>
-                                <button
-                                    className="BtnSingle BtnSingleSmallBlack"
-                                    onClick={() => alert("建置中")}
-                                >
-                                    more
-                                </button>
-                            </div>
+                                    <div className={`SectionAltCont ${item.alignClass}`}>
+                                        <div className={item.widthClass}>
+                                            <Image
+                                                src={item.img.src}
+                                                // src="/images/project/All001.jpg"
+                                                alt={item.img.alt}
+                                                width={item.img.width}
+                                                height={item.img.height}
+                                                priority
+                                            />
+                                            <div className="SectionAltTxt">
+                                                <div className="SectionAltTag">{item.tag}</div>
+                                                <div className={`TxtH5 SectionAltTitle`}>{item.title}</div>
+                                            </div>
+                                            <button 
+                                                className={`BtnSingle BtnSingleSmallBlack ${styleProject.BtnSingle}`}
+                                                onClick={item.btnAction}
+                                            >
+                                                more
+                                            </button>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                            
+                          
                         </div>
 
                     </div>
