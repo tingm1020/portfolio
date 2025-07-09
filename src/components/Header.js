@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import stylesHeader from "../assets/styles/Header.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
+import { faL } from "@fortawesome/free-solid-svg-icons";
+import { section, style } from "framer-motion/client";
 
 const HeaderVariant1 = () => {
 
@@ -75,12 +77,12 @@ const HeaderVariant1 = () => {
                 <div className={`menuMb ${isMenuOpen ? 'on': ''}`}>
                     <button 
                         onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                        className="menuMbBtn"
+                        className="menuMbBtnNormal"
                         aria-label="切換選單"
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span className="line"></span>
+                        <span className="line"></span>
+                        <span className="line"></span>
                     </button>
                 </div>
                 <div className="clear"></div>
@@ -140,6 +142,8 @@ const HeaderVariant2 = () =>{
                 el.scrollIntoView({ behavior: 'smooth', block: 'start'});
             }
         }
+        setTogglemenuOpen(null);
+        setIsMenuOpen(false);
     };
     const [showSubmenu, setShowSubmenu] = useState(false);
     const hoverSectionIndex = [
@@ -152,6 +156,39 @@ const HeaderVariant2 = () =>{
         { id: "projectOverview", title: "專案地圖", content: "快速搜尋與瀏覽歷年作品", page: "/project" },
     ];
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [togglemenuOpen, setTogglemenuOpen] = useState(null);
+    const menuOpen = () => setIsMenuOpen(true);
+    const menuClose = () => setIsMenuOpen(false);
+    
+    const scrollPage = (id) => {
+        menuClose();
+        const target = document.getElementById(id);
+        if(target) {
+            const offsetTop = target.offsetTop;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+            });
+        }
+    };
+
+    const toggleMenu = (menuName) => {
+        setTogglemenuOpen((prev) => (prev === menuName ? null : menuName));
+    }
+
+    const menuItems = [
+        {
+            key: "intro",
+            title: "intro",
+            sections: hoverSectionIndex,
+        },
+        {
+            key: "project",
+            title: "project",
+            sections: hoverSectionProject,
+        },
+    ];
 
     return (
         <div className={`${stylesHeader.HeaderSingleEquallyLine} ${stylesHeader.HeaderStyle1}`}>
@@ -196,9 +233,71 @@ const HeaderVariant2 = () =>{
                         </button>
                     </div>
                     <div className="clear"></div>
-                    
                 </div>
-                
+                <div className={`menuMb ${isMenuOpen ? 'on' : ''}`}>
+                    <button
+                        onClick={() => {
+                            setIsMenuOpen(!isMenuOpen);
+                            setTogglemenuOpen(null);
+                        }}
+                        className="menuMbBtnClose"
+                        aria-label="切換選單"
+                    >
+                        <span className="line"></span>
+                        <span className="line"></span>
+                        <span className="line"></span>
+                    </button>
+                </div>
+                <div className="clear"></div>
+            </div>
+            <div className={`menuMbWrap ${isMenuOpen ? 'on' : ''}`}>
+                <div className={stylesHeader.menuMbStyle2}>
+                    <div className={stylesHeader.menuMbBlock}>
+                        {menuItems.map((menu) => (
+                            <div key={menu.key}>
+                                <button
+                                    className={`${stylesHeader.menuMenuBtnToggle} ${togglemenuOpen === menu.key ? stylesHeader.on: ""}`}
+                                    onClick={() => toggleMenu(menu.key)}
+                                >
+                                    {menu.title}
+                                    <span className={stylesHeader.menuMenuBtnToggleArrow}></span>
+                                </button>
+                                <AnimatePresence>
+                                    {togglemenuOpen === menu.key && (
+                                        <motion.div
+                                            className={`${stylesHeader.menuTogglemenu} ${stylesHeader.menuTogglemenuStyle2}`}
+                                            key="intro"
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: "auto" }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                        >
+                                            {menu.sections.map((item, index) => (
+                                                <motion.div
+                                                    key={item.id}
+                                                    className={stylesHeader.menuTogglemenuStyle2Item}
+                                                    initial={{ opacity: 0, y: 80 }}
+                                                    animate={{ opacity: 1, y: 0}}
+                                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                                    onClick={() => handleNavClick(item)}
+                                                >
+                                                    <h5 className={`TxtH5 ${stylesHeader.menuTogglemenuStyle2H5}`}>
+                                                        {item.title}
+                                                        <span className={stylesHeader.menuMnueBtnArrow}></span>
+                                                    </h5>
+                                                    <p className={stylesHeader.menuTogglemenuStyle2Dec}>{item.content}</p>
+                                                </motion.div>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            
+                                <div className="clear"></div>
+                            </div>
+                        ))}
+                        
+                    </div>
+                </div>
             </div>
             <AnimatePresence mode="wait">
                 {showSubmenu && (

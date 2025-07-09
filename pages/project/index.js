@@ -57,6 +57,7 @@ const ProjectPage = () =>{
             alignClass: 'SectionAltRight',
             widthClass: 'SectionAltW35',
             extraClass: '',
+            viewport: { once: false, amount: 0.5}
         },
         {
             img:{
@@ -73,6 +74,7 @@ const ProjectPage = () =>{
             alignClass: 'SectionAltLeft',
             widthClass: 'SectionAltW50',
             extraClass: styleProject.BlockOffsetTop,
+            viewport: { once: false, amount: 0.3 }
         },
          {
             img:{
@@ -89,6 +91,7 @@ const ProjectPage = () =>{
             alignClass: 'SectionAltRight',
             widthClass: 'SectionAltW60',
             extraClass: '',
+            viewport: { once: false, amount: 0 }
         },
     ]
     return (
@@ -119,10 +122,10 @@ const ProjectPage = () =>{
                                 <motion.div 
                                     className={`SectionAltBlock ${item.extraClass}`}
                                     key={index}
-                                    initial={{ opacity: 0, y: 150 }}
+                                    initial={{ opacity: 0, y: 80 }}
                                     whileInView={{ opacity:1, y:0 }}
                                     transition={{ duration: 1, delay: index * 0.2 }}
-                                    viewport={{ once: false, amount: 0.2}}
+                                    viewport={item.viewport}
                                 >
                                     <div className={`SectionAltCont ${item.alignClass}`}>
                                         <div className={item.widthClass}>
@@ -135,7 +138,17 @@ const ProjectPage = () =>{
                                                 priority
                                             />
                                             <div className="SectionAltTxt">
-                                                <div className="SectionAltTag">{item.tag}</div>
+                                                <div className="SectionAltTag">
+                                                    <span className="SectionAltTagImg">
+                                                        <Image 
+                                                            src="/images/icon/section-icon1.svg" 
+                                                            alt="section-icon"
+                                                            width={50}
+                                                            height={50}
+                                                        />
+                                                    </span>
+                                                    {item.tag}
+                                                </div>
                                                 <div className={`TxtH5 SectionAltTitle`}>{item.title}</div>
                                             </div>
                                             <button 

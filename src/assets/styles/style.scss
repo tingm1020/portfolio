@@ -394,24 +394,45 @@ svg{
 			box-sizing: border-box;
 			z-index: 12;
 			display: none;
-			span{
-				position: relative;
-				display: block;
-				@include wh(23px,3px);
-				background: #fff;
-				border-radius: 10px;
-				transition: all .6s;
-				&:nth-child(1){
-					top: -5px;
+			&Normal{
+				@extend .menuMbBtn;
+				.line{
+					position: relative;
+					display: block;
+					@include wh(23px,3px);
+					background: #fff;
+					border-radius: 10px;
+					transition: all .6s;
+					&:nth-child(1){
+						top: -5px;
+					}
+					&:nth-child(3){
+						top: 5px;
+					}
 				}
-				&:nth-child(3){
-					top: 5px;
+			}
+			&Close{
+				@extend .menuMbBtn;
+				transition: all .3s ease-in-out;
+				&:before{
+					content: '';
+					@include abs($w:25px,$h:25px,$t:50%,$l:50%);
+					transform: translate(-50%,-50%);
+					border-radius: 100%;
+					transition: all .6s ease-in-out;
+				}
+				.line{
+					@include wh(20px,2px);
+					background: $allColor5;
+					display: block;
+					margin: 5px auto;
+					transition: all .3s ease-in-out;
 				}
 			}
 		}
 		&.on{
-			.menuMbBtn{
-				i{
+			.menuMbBtnNormal{
+				.line{
 					&:nth-child(1){
 						transform: rotate(45deg);
 						top: 4px;
@@ -422,6 +443,23 @@ svg{
 					&:nth-child(3){
 						transform: rotate(-45deg);
 						top: -2px;
+					}
+				}
+			}
+			.menuMbBtnClose{
+				&:before{
+					border: 1px solid $allColor5;
+				}
+				.line{
+					width: 15px;
+					&:nth-child(1){
+						transform: translateY(7px) rotate(45deg);
+					}
+					&:nth-child(2){
+						opacity: 0;
+					}
+					&:nth-child(3){
+						transform: translateY(-7px) rotate(135deg);
 					}
 				}
 			}
@@ -440,7 +478,7 @@ svg{
 			visibility: hidden;
 			transition: all .6s;
 			&.on{
-				.menuMbMenuBtn{
+				.menuMbMenuBtnNormal{
 					opacity: 1;
 					transform: translate3d(0,0,0);
 					transition: all .6s;
@@ -717,6 +755,13 @@ svg{
 			display: inline-block;
 			line-height: 1.2;
 			font-size: 1vw;
+			&Img{
+				position: relative;
+				display: inline-block;
+				@include wh(18px,18px);
+				vertical-align: middle;
+				margin: -5px 5px 0 0;
+			}
 		}
 		&Title{
 			color: $allColor1;
