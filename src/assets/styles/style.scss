@@ -760,7 +760,13 @@ svg{
 				display: inline-block;
 				@include wh(18px,18px);
 				vertical-align: middle;
-				margin: -5px 5px 0 0;
+				margin: 3px 5px 0 0;
+			}
+			&Txt{
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 1.2;
 			}
 		}
 		&Title{
@@ -877,6 +883,13 @@ svg{
 			}
 		}
 	}
+	.Section{
+		&Alt{
+			&Tag{
+				font-size: 14px;
+			}
+		}
+	}
 }
 @include rwd(max,1024){
 	.Txt{
@@ -924,14 +937,7 @@ svg{
 			font-size: 36px;
 		}
 	}
-	.menu{
-		&Mb{
-			display: block;
-			&Btn{
-				display: inline-block;
-			}
-		}
-	}
+	
 	.Btn{
 		&Single{
 			&Small{
@@ -1010,6 +1016,25 @@ svg{
 				&Wrap{
 					opacity: 1;
 					visibility: visible;
+				}
+			}
+		}
+	}
+}
+@include rwd(max,750){
+	.menu{
+		&Mb{
+			display: block;
+			&Btn{
+				display: inline-block;
+			}
+		}
+	}
+	.Section{
+		&Alt{
+			&Mb{
+				&W100{
+					width: 100%;
 				}
 			}
 		}

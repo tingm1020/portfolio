@@ -55,7 +55,7 @@ const ProjectPage = () =>{
             title: '遠見台灣最佳大學排行榜',
             btnAction: () => alert("建置中"),
             alignClass: 'SectionAltRight',
-            widthClass: 'SectionAltW35',
+            widthClass: 'SectionAltW35 SectionAltMbW100',
             extraClass: '',
             viewport: { once: false, amount: 0.5}
         },
@@ -72,8 +72,8 @@ const ProjectPage = () =>{
             title: 'UI套件、專案',
             btnAction: () => alert("建置中"),
             alignClass: 'SectionAltLeft',
-            widthClass: 'SectionAltW50',
-            extraClass: styleProject.BlockOffsetTop,
+            widthClass: 'SectionAltW50 SectionAltMbW100',
+            extraClass: `${styleProject.BlockOffsetTop} ${styleProject.BlockOffsetMB0}`,
             viewport: { once: false, amount: 0.3 }
         },
          {
@@ -89,7 +89,7 @@ const ProjectPage = () =>{
             title: '錯誤日記簿',
             btnAction: () => alert("建置中"),
             alignClass: 'SectionAltRight',
-            widthClass: 'SectionAltW60',
+            widthClass: 'SectionAltW60 SectionAltMbW100',
             extraClass: '',
             viewport: { once: false, amount: 0 }
         },
@@ -147,7 +147,7 @@ const ProjectPage = () =>{
                                                             height={50}
                                                         />
                                                     </span>
-                                                    {item.tag}
+                                                    <p className="SectionAltTagTxt">{item.tag}</p>
                                                 </div>
                                                 <div className={`TxtH5 SectionAltTitle`}>{item.title}</div>
                                             </div>

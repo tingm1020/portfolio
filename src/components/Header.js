@@ -234,7 +234,7 @@ const HeaderVariant2 = () =>{
                     </div>
                     <div className="clear"></div>
                 </div>
-                <div className={`menuMb ${isMenuOpen ? 'on' : ''}`}>
+                <div className={`menuMb ${stylesHeader.menuMb} ${isMenuOpen ? 'on' : ''}`}>
                     <button
                         onClick={() => {
                             setIsMenuOpen(!isMenuOpen);
