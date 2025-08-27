@@ -38,7 +38,6 @@ $pageColor1: #f7f8f2;
     z-index: 9;
     &SingleEquallyLine{
         @extend .Header;
-        
         box-sizing: border-box;
     }
     &Style1{
